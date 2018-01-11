@@ -5,7 +5,7 @@
         </div>
         <div class='col-sm-9 body-content'>
             <router-outlet></router-outlet>
-            <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChanged()"></favorite>
+            <favorite [isFavorite]="post.isFavorite" (changeOutput)="onFavoriteChanged($event)"></favorite>
         </div>
     </div>
 </div>
