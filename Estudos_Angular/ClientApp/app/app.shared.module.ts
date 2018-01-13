@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { FavoriteComponent } from "./components/favorite/favorite.component";
+import { PanelComponent } from "./components/panel/panel.component";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { FavoriteComponent } from "./components/favorite/favorite.component";
         CounterComponent,
         FavoriteComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        PanelComponent
     ],
     imports: [
         CommonModule,

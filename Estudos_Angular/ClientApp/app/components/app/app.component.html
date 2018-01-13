@@ -6,6 +6,13 @@
         <div class='col-sm-9 body-content'>
             <router-outlet></router-outlet>
             <favorite [isFavorite]="post.isFavorite" (changeOutput)="onFavoriteChanged($event)"></favorite>
+            <bootstrap-panel>
+                <div class="heading">Heading</div>
+                <div class="body">
+                    <h2>Body</h2>
+                    <p>Content of body</p>
+                </div>
+            </bootstrap-panel> 
         </div>
     </div>
 </div>
