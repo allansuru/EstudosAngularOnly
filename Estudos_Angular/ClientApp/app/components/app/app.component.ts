@@ -7,16 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     courses = [1, 2];
-    newCourses = [
-        { id: 1, name: 'C#' },
-        { id: 2, name: 'JAVA' },
-        { id: 3, name: 'REACT' },
-        { id: 4, name: 'ANGULAR' },
-        { id: 5, name: 'IONIC' },
-        { id: 6, name: 'SHAREPOINT' },
-        { id: 7, name: '.NETCORE' }
-    ];
-
+    newCourses: any;
 
     viewMode = 'list';
 
@@ -33,13 +24,13 @@ export class AppComponent {
 
 
 
-    onFavoriteChanged(eventsArgs : object) {
+    onFavoriteChanged(eventsArgs: object) {
         //assinante
         console.log('changed:', eventsArgs);
     }
     mostraLista() {
         let result;
-        result = (this.courses.length > 0) ? true : false 
+        result = (this.courses.length > 0) ? true : false
         return result;
     }
     onAdd() {
@@ -53,6 +44,23 @@ export class AppComponent {
         this.newCourses.splice(index, 1); //remove o index somente, se nao passar o 1, remove do index pra baixo!!
 
         console.log('removido', this.newCourses);
+    }
+    loadCourses() {
+
+        this.newCourses = [
+            { id: 1, name: 'C#' },
+            { id: 2, name: 'JAVA' },
+            { id: 3, name: 'REACT' },
+            { id: 4, name: 'ANGULAR' },
+            { id: 5, name: 'IONIC' },
+            { id: 6, name: 'SHAREPOINT' },
+            { id: 7, name: '.NETCORE' }
+        ];
+    }
+    trackCourse(index: any, newCourse: any) {
+        // pra caso tenhamos listas muito grandes, o track melhora a perfomace!!
+        console.log('track');
+        return newCourse ? newCourse.id : undefined;
     }
 
 }

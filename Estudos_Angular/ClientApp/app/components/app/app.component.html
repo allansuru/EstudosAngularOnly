@@ -40,9 +40,10 @@
     <br /><br />
     <p class="ex-estudos">Exemple ngFor</p>
     <button class="btn btn-success" (click)="onAdd()">Add</button>
+    <button class="btn btn-default" (click)="loadCourses()">Load Courses</button>
    
     <ul>
-        <li *ngFor="let c of newCourses; index as i"> 
+        <li *ngFor="let c of newCourses; index as i; trackBy: trackCourse"> 
         {{ i }} - {{ c.name }} 
             <button class="btn btn-danger" (click)="removeNewCourse(c)">Remove</button>
         </li>
@@ -59,7 +60,13 @@
     <div class='row'>
         <div class='col-sm-9 body-content'>
             <router-outlet></router-outlet>
+            <p class="ex-estudos">Exemple ngClass</p>
             <favorite [isFavorite]="post.isFavorite" (changeOutput)="onFavoriteChanged($event)"></favorite>
+            <tweet-like [isLiked]="tweet.isLiked"
+                        [likesCount]="tweet.likesCount">
+
+            </tweet-like>
+            <br /><br />
             <bootstrap-panel>
                 <ng-container class="heading">Heading</ng-container>
                 <div class="body">
@@ -67,10 +74,7 @@
                     <p>Content of body</p>
                 </div>
             </bootstrap-panel>
-            <tweet-like [isLiked]="tweet.isLiked"
-                        [likesCount]="tweet.likesCount">
 
-            </tweet-like>
         </div>
     </div>
 </div>

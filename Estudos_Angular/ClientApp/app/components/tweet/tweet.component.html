@@ -1,6 +1,10 @@
 ﻿<span class="glyphicon"
-      [class.glyphicon-heart] ="isSelected"
-      [class.glyphicon-heart-empty]="!isSelected"
+    [ngClass]="{
+      'glyphicon-heart': isSelected,
+      'glyphicon-heart-empty': !isSelected
+      }"
       (click)="onClick()">
 </span>
 <span>{{likeCount}}</span>
+
+
