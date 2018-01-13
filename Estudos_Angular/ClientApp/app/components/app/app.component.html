@@ -1,8 +1,20 @@
 <div class='container-fluid'>
+    <div *ngIf="mostraLista()">
+        <h2>List of courses - Vindo de uma function()</h2> 
+    </div>
+    <div *ngIf="courses.length === 0">
+        <h2>No courses yet - Vindo de uma function()</h2>
+    </div>
+
+    <div *ngIf="courses.length > 0; else noCourses">
+        <h2>List of courses</h2>
+    </div>
+    <ng-template #noCourses>
+        <h2>No courses yet</h2>
+    </ng-template>
+
+    <br /><br />
     <div class='row'>
-        <div class='col-sm-3'>
-            <nav-menu></nav-menu>
-        </div>
         <div class='col-sm-9 body-content'>
             <router-outlet></router-outlet>
             <favorite [isFavorite]="post.isFavorite" (changeOutput)="onFavoriteChanged($event)"></favorite>
@@ -12,7 +24,7 @@
                     <h2>Body</h2>
                     <p>Content of body</p>
                 </div>
-            </bootstrap-panel> 
+            </bootstrap-panel>
             <tweet-like [isLiked]="tweet.isLiked"
                         [likesCount]="tweet.likesCount">
 

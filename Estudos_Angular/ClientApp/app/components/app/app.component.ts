@@ -5,7 +5,9 @@ import { Component } from '@angular/core';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
- export class AppComponent {
+export class AppComponent {
+    courses = [1, 2];
+
     post = {
         title: "Title",
         isFavorite: true
@@ -22,5 +24,12 @@ import { Component } from '@angular/core';
     onFavoriteChanged(eventsArgs : object) {
         //assinante
         console.log('changed:', eventsArgs);
+    }
+    mostraLista() {
+        let result;
+
+        result = (this.courses.length > 0) ? true : false
+
+        return result;
     }
 }
