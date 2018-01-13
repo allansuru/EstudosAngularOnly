@@ -1,4 +1,5 @@
 <div class='container-fluid'>
+    <p class="ex-estudos">Exemple ngIf/ng-template</p>
     <div *ngIf="mostraLista()">
         <h2>List of courses - Vindo de uma function()</h2> 
     </div>
@@ -6,13 +7,54 @@
         <h2>No courses yet - Vindo de uma function()</h2>
     </div>
 
-    <div *ngIf="courses.length > 0; else noCourses">
+    <div *ngIf="courses.length > 0; then yesCourses else noCourses"></div>
+
+    <ng-template #yesCourses>
         <h2>List of courses</h2>
-    </div>
+    </ng-template>
     <ng-template #noCourses>
         <h2>No courses yet</h2>
     </ng-template>
+    <br />
+    <br />
+    <p class="ex-estudos">Exemple hidden</p>
+    <div [hidden]="courses.length == 0">
+        Yes Courses
+    </div>
+    <div [hidden]="!courses.length == 0">
+        No Courses
+    </div>
 
+    <br /><br />
+    <p class="ex-estudos">Exemple ngSwitch</p>
+    <ul class="nav nav-pills">
+        <li [class.active]="viewMode == 'map'"><a (click)="viewMode = 'map'">Map View</a></li>
+        <li [class.active]="viewMode == 'list'"><a (click)="viewMode = 'list'">List View</a></li>
+    </ul>
+    <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase="'map'">Map View Content</div>
+        <div *ngSwitchCase="'list'">List View Content</div>
+        <div *ngSwitch>Default</div>
+    </div>
+
+    <br /><br />
+    <p class="ex-estudos">Exemple ngFor</p>
+    <button class="btn btn-success" (click)="onAdd()">Add</button>
+   
+    <ul>
+        <li *ngFor="let c of newCourses; index as i"> 
+        {{ i }} - {{ c.name }} 
+            <button class="btn btn-danger" (click)="removeNewCourse(c)">Remove</button>
+        </li>
+    </ul>
+    <br /><br />
+    <p class="ex-estudos">Exemple ngFor somente par</p>
+    <ul>
+        <li *ngFor="let c of newCourses; even as ehPar">
+        {{ c.name }} <span *ngIf="ehPar">(PAR(even))</span>
+        </li>
+
+    </ul>
     <br /><br />
     <div class='row'>
         <div class='col-sm-9 body-content'>
