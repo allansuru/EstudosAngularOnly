@@ -1,0 +1,12 @@
+﻿body {
+}
+
+span.glyphicon {
+    cursor: pointer;
+}
+span.glyphicon.glyphicon-heart-empty {
+    color: #ccc;
+}
+span.glyphicon.glyphicon-heart {
+    color: deeppink
+}

@@ -7,12 +7,16 @@
             <router-outlet></router-outlet>
             <favorite [isFavorite]="post.isFavorite" (changeOutput)="onFavoriteChanged($event)"></favorite>
             <bootstrap-panel>
-                <div class="heading">Heading</div>
+                <ng-container class="heading">Heading</ng-container>
                 <div class="body">
                     <h2>Body</h2>
                     <p>Content of body</p>
                 </div>
             </bootstrap-panel> 
+            <tweet-like [isLiked]="tweet.isLiked"
+                        [likesCount]="tweet.likesCount">
+
+            </tweet-like>
         </div>
     </div>
 </div>

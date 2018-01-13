@@ -11,6 +11,7 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { FavoriteComponent } from "./components/favorite/favorite.component";
 import { PanelComponent } from "./components/panel/panel.component";
+import { TweetLikeComponent } from "./components/tweet/tweet.component";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { PanelComponent } from "./components/panel/panel.component";
         FavoriteComponent,
         FetchDataComponent,
         HomeComponent,
-        PanelComponent
+        PanelComponent,
+        TweetLikeComponent
     ],
     imports: [
         CommonModule,

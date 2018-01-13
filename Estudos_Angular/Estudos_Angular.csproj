@@ -23,10 +23,12 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\components\panel\panel.component.ts" />
+    <None Remove="ClientApp\app\components\tweet\tweet.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\panel\panel.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\tweet\tweet.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
