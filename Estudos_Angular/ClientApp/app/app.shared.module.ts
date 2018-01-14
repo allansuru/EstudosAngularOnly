@@ -12,7 +12,10 @@ import { CounterComponent } from './components/counter/counter.component';
 import { FavoriteComponent } from "./components/favorite/favorite.component";
 import { PanelComponent } from "./components/panel/panel.component";
 import { TweetLikeComponent } from "./components/tweet/tweet.component";
+import { InputFormatDirective } from "./directives/input-format.directive";
+import { ColapseComponent } from "./components/colapse/colapse.component";
 
+//Aqui no @ngModule registro todos componentes, pipes e diretivas
 @NgModule({
     declarations: [
         AppComponent,
@@ -22,7 +25,9 @@ import { TweetLikeComponent } from "./components/tweet/tweet.component";
         FetchDataComponent,
         HomeComponent,
         PanelComponent,
-        TweetLikeComponent
+        TweetLikeComponent,
+        InputFormatDirective,
+        ColapseComponent
     ],
     imports: [
         CommonModule,

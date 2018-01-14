@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     courses = [1, 2];
     newCourses: any;
+    canSave = true;
 
     viewMode = 'list';
 
@@ -21,6 +22,18 @@ export class AppComponent {
         isLiked: true,
         likesCount: 10
     }
+    task = {
+        title: 'Review App',
+        assignee: {
+            name: 'John Smit'
+        }
+    }
+
+    task2 = {
+        title: 'Review App',
+        assignee:null
+    }
+
 
 
 
@@ -61,6 +74,11 @@ export class AppComponent {
         // pra caso tenhamos listas muito grandes, o track melhora a perfomace!!
         console.log('track');
         return newCourse ? newCourse.id : undefined;
+    }
+
+
+    ngOnInit() {
+        console.log('JsonFormater', JSON.stringify(this.task));
     }
 
 }

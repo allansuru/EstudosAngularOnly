@@ -22,13 +22,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\colapse\colapse.component.ts" />
     <None Remove="ClientApp\app\components\panel\panel.component.ts" />
     <None Remove="ClientApp\app\components\tweet\tweet.component.ts" />
+    <None Remove="ClientApp\app\directives\input-format.directive.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\colapse\colapse.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\panel\panel.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\tweet\tweet.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\directives\input-format.directive.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

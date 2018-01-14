@@ -51,30 +51,60 @@
     <br /><br />
     <p class="ex-estudos">Exemple ngFor somente par</p>
     <ul>
-        <li *ngFor="let c of newCourses; even as ehPar">
+        <li *ngFor="let c of newCourses; even as ehPar" [ngClass]="{'allBlue': c.id === 6}">
         {{ c.name }} <span *ngIf="ehPar">(PAR(even))</span>
         </li>
 
     </ul>
     <br /><br />
-    <div class='row'>
-        <div class='col-sm-9 body-content'>
-            <router-outlet></router-outlet>
-            <p class="ex-estudos">Exemple ngClass</p>
-            <favorite [isFavorite]="post.isFavorite" (changeOutput)="onFavoriteChanged($event)"></favorite>
-            <tweet-like [isLiked]="tweet.isLiked"
-                        [likesCount]="tweet.likesCount">
+    <p class="ex-estudos">Exemple ngStyle somente par</p>
+    <!--
+    <button
+            [style.backgroundColor]="canSave ? 'blue' : 'gray'"
+            [style.color]="canSave ? 'white' : 'black'"
+            [style.fontWeight]="canSave ? 'bold' : 'normal'"
+          
+            >
+        Save
+    </button>
+        -->
+    <button [ngStyle]="{
+            'backgroundColor': canSave ? 'blue' : 'gray',
+            'color': canSave ? 'white' : 'black',
+            'fontWeight': canSave ? 'bold' : 'normal'
+            }">
+        Save
+    </button>
+    <br /><br />
+    <p class="ex-estudos">Exemple safe transversal operator</p>
+    <span *ngIf="task.assignee">{{ task.assignee.name }}</span>
+    <span>{{ task2.assignee?.name }}</span>
+    <br /><br />
+    <p class="ex-estudos">Exemple Custom Directives</p>
+    <input type="text" name="name" value="" [appInputFormat]="'lowercase'" />
+    <br /><br />
+  
+        <div class='row'>
+            <div class='col-sm-9 body-content'>
+                <router-outlet></router-outlet>
+                <p class="ex-estudos">Exemple ngClass</p>
+                <favorite [isFavorite]="post.isFavorite" (changeOutput)="onFavoriteChanged($event)"></favorite>
+                <tweet-like [isLiked]="tweet.isLiked"
+                            [likesCount]="tweet.likesCount">
 
-            </tweet-like>
-            <br /><br />
-            <bootstrap-panel>
-                <ng-container class="heading">Heading</ng-container>
-                <div class="body">
-                    <h2>Body</h2>
-                    <p>Content of body</p>
-                </div>
-            </bootstrap-panel>
-
+                </tweet-like>
+                <br /><br />
+                <bootstrap-panel>
+                    <ng-container class="heading">Heading</ng-container>
+                    <div class="body">
+                        <h2>Body</h2>
+                        <p>Content of body</p>
+                    </div>
+                </bootstrap-panel>
+                <br /><br />
+                <app-colapse titulo-colapse="Exercicio">
+                    Conteudo
+                </app-colapse>
+            </div>
         </div>
-    </div>
 </div>

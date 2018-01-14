@@ -1,0 +1,17 @@
+﻿<div class="colapse">
+    <div class="colapse-heading"
+         [class.expanded]="isExpended"
+         (click)="toggle()"
+         >
+        {{ tituloColapse }}
+        <span class="glyphicon" [ngClass]="{
+              'glyphicon-chevron-up': isExpended,
+              'glyphicon-chevron-down' : !isExpended
+              }"></span>
+    </div>
+    <div *ngIf="isExpended" class="colapse-body">
+        <ng-content>
+
+        </ng-content>
+    </div>
+</div>

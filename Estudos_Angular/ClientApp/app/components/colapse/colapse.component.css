@@ -1,0 +1,18 @@
+﻿.colapse {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+.colapse-heading {
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+}
+.colapse-body {
+    padding: 20px;
+}
+.expanded {
+    background: #f0f0f0;
+}
+span.glyphicon {
+    float: right;
+}
