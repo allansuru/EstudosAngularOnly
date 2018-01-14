@@ -1,4 +1,13 @@
 <div class='container-fluid'>
+    <div class='row'>
+        <div class='col-sm-3'>
+            <nav-menu></nav-menu>
+        </div>
+        <div class='col-sm-9 body-content'>
+            <router-outlet></router-outlet>
+        </div>
+    </div> 
+    
     <p class="ex-estudos">Exemple ngIf/ng-template</p>
     <div *ngIf="mostraLista()">
         <h2>List of courses - Vindo de uma function()</h2> 
@@ -58,7 +67,7 @@
     </ul>
     <br /><br />
     <p class="ex-estudos">Exemple ngStyle somente par</p>
-    <!--
+
     <button
             [style.backgroundColor]="canSave ? 'blue' : 'gray'"
             [style.color]="canSave ? 'white' : 'black'"
@@ -67,7 +76,7 @@
             >
         Save
     </button>
-        -->
+        
     <button [ngStyle]="{
             'backgroundColor': canSave ? 'blue' : 'gray',
             'color': canSave ? 'white' : 'black',
@@ -86,7 +95,7 @@
   
         <div class='row'>
             <div class='col-sm-9 body-content'>
-                <router-outlet></router-outlet>
+
                 <p class="ex-estudos">Exemple ngClass</p>
                 <favorite [isFavorite]="post.isFavorite" (changeOutput)="onFavoriteChanged($event)"></favorite>
                 <tweet-like [isLiked]="tweet.isLiked"

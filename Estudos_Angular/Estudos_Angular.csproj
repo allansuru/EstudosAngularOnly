@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="AfominDotCom.AspNetCore.AngularCLI" Version="1.0.5" />
+    <PackageReference Include="Dapper" Version="1.50.4" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
   </ItemGroup>
 
@@ -26,6 +27,8 @@
     <None Remove="ClientApp\app\components\panel\panel.component.ts" />
     <None Remove="ClientApp\app\components\tweet\tweet.component.ts" />
     <None Remove="ClientApp\app\directives\input-format.directive.ts" />
+    <None Remove="ClientApp\app\models\product.ts" />
+    <None Remove="ClientApp\app\services\product.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +36,8 @@
     <TypeScriptCompile Include="ClientApp\app\components\panel\panel.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\tweet\tweet.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\directives\input-format.directive.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\product.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\product.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

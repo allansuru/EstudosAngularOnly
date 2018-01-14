@@ -14,6 +14,8 @@ import { PanelComponent } from "./components/panel/panel.component";
 import { TweetLikeComponent } from "./components/tweet/tweet.component";
 import { InputFormatDirective } from "./directives/input-format.directive";
 import { ColapseComponent } from "./components/colapse/colapse.component";
+import { CaixinhasComponent } from "./components/caixinhas/caixinhas.component";
+import { ProductService } from "./services/product.service";
 
 //Aqui no @ngModule registro todos componentes, pipes e diretivas
 @NgModule({
@@ -27,7 +29,8 @@ import { ColapseComponent } from "./components/colapse/colapse.component";
         PanelComponent,
         TweetLikeComponent,
         InputFormatDirective,
-        ColapseComponent
+        ColapseComponent,
+        CaixinhasComponent
     ],
     imports: [
         CommonModule,
@@ -38,8 +41,13 @@ import { ColapseComponent } from "./components/colapse/colapse.component";
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'caixinhas', component: CaixinhasComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ]
+    ,
+    providers: [
+        ProductService
     ]
 })
 export class AppModuleShared {

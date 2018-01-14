@@ -1,7 +1,25 @@
-<h1>Counter</h1>
+<div class="container">
 
-<p>This is a simple example of an Angular component.</p>
+    <ul>
+        <li *ngFor="let c of clientes">
+            <bootstrap-panel>
+                <ng-container class="heading">
+                    <h2>  {{ c.name }}</h2>
+                </ng-container>
+                <div class="body">
+                    <h3>{{ c.cidade }}</h3>
+                    <p>{{c.tweet?.body}}</p>
+                </div>
+            </bootstrap-panel>
+            <tweet-like [isLiked]="c.tweet.isLiked"
+                        [likesCount]="c.tweet?.likesCount">
 
-<p>Current count: <strong>{{ currentCount }}</strong></p>
+            </tweet-like>
+        </li>
+    </ul>
 
-<button (click)="incrementCounter()">Increment</button>
+
+
+</div>
+
+
