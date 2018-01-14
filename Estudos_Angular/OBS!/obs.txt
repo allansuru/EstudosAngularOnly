@@ -2,7 +2,8 @@
 
 div.panel.panel-default>div.panel-heading+div.panel-body 
    (li>a)*2
-
+   div.form-group
+    label+input[type='text'].form-control
 
 
 -- docs

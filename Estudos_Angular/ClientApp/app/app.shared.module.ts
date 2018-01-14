@@ -16,6 +16,7 @@ import { InputFormatDirective } from "./directives/input-format.directive";
 import { ColapseComponent } from "./components/colapse/colapse.component";
 import { CaixinhasComponent } from "./components/caixinhas/caixinhas.component";
 import { ProductService } from "./services/product.service";
+import { ContactComponent } from "./components/contact/contact.component";
 
 //Aqui no @ngModule registro todos componentes, pipes e diretivas
 @NgModule({
@@ -30,7 +31,8 @@ import { ProductService } from "./services/product.service";
         TweetLikeComponent,
         InputFormatDirective,
         ColapseComponent,
-        CaixinhasComponent
+        CaixinhasComponent,
+        ContactComponent
     ],
     imports: [
         CommonModule,
