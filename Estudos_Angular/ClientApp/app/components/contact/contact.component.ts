@@ -7,5 +7,9 @@
 })
 
 export class ContactComponent {
+
+    log(x: any) {
+        console.log('LOG', x)
+    }
     
 }
