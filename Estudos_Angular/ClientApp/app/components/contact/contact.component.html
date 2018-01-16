@@ -2,7 +2,7 @@
     <div class="form-group">
         <label for="firstName">First Name</label>
         <input required
-               [(ngModel)] ="contact.firstName"
+               [(ngModel)]="contact.firstName"
                name="firstName"
                #firstName="ngModel"
                minlength="3"
@@ -17,34 +17,45 @@
             <div *ngIf="firstName.errors.required">
                 First Name is Required!
             </div>
-            <div 
-                 *ngIf="firstName.errors.minlength">
+            <div *ngIf="firstName.errors.minlength">
                 FirstName should be minimum {{ firstName.errors.minlength.requiredLength }} characters!
             </div>
-            <div 
-                 *ngIf="firstName.errors.pattern">
+            <div *ngIf="firstName.errors.pattern">
                 FirstName should be 'banana' (pattern)
             </div>
-    </div>
-    <div class="form-group">
-        <label for="comment">Comment</label>
-        <textarea   [(ngModel)]="contact.comment" name="comment" class="form-control" cols="30" rows="10" id="comment">
+        </div>
+        <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea [(ngModel)]="contact.comment" name="comment" class="form-control" cols="30" rows="10" id="comment">
             </textarea>
-    </div>
-    <div class="checkbox">
-        <label><input type="checkbox" value="" [(ngModel)]="contact.isSubscribed" name="isSubscribed" />Subscribe to mailing list</label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value=""
+                       [(ngModel)]="contact.isSubscribed" name="isSubscribed" />Subscribe to mailing list
+            </label>
 
-    </div>
+        </div>
         <div class="form-group">
             <label for="contactMethod">Contact Method</label>
-            <select [(ngModel)]="contact.contactMethod" name="contactMethod" id="contactMethod" class="form-control"> <!--multiple-->
+            <select multiple [(ngModel)]="contact.contactMethod" name="contactMethod" id="contactMethod" class="form-control">
                 <option value=""></option>
-                <option *ngFor="let cm of contactMethodOptions" [value]="cm.id">{{ cm.name }}</option> <!-- [ngValue]="cm" mostra o objeto inteiro no value -->
+                <option *ngFor="let cm of contactMethodOptions"
+                        [value]="cm.id">
+                    {{ cm.name }}
+                </option> <!-- [ngValue]="cm" mostra o objeto inteiro no value -->
             </select>
         </div>
+        <div *ngFor="let cm of contactMethodOptions" class="radio">
+            <label>
+                <input [(ngModel)]="contact.contactMethod" type="radio" name="contactMethod" [value]="cm.id" />
+                {{ cm.name }}
+            </label>
+        </div>
+
         <p>
             {{ f.value | json }}
         </p>
-    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
-        </div>
+        <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+    </div>
 </form>
