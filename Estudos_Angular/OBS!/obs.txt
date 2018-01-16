@@ -4,6 +4,7 @@ div.panel.panel-default>div.panel-heading+div.panel-body
    (li>a)*2
    div.form-group
     label+input[type='text'].form-control
+	 div.form-group>label[for='contactMethod']+select[id='contactMethod'].form-control
 
 
 -- docs
