@@ -1,12 +1,33 @@
-﻿<form>
+﻿<form #f="ngForm" (ngSubmit)="submit(f)">
     <div class="form-group">
         <label for="firstName">First Name</label>
-        <input required ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" value="" class="form-control" />
-        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">First Name is Required.</div>
+        <input required
+               [(ngModel)] ="contact.firstName"
+               name="firstName"
+               #firstName="ngModel"
+               minlength="3"
+               maxlength="10"
+               pattern="banana"
+               (change)="log(firstName,f)"
+               id="firstName"
+               type="text"
+               class="form-control" />
+        <div class="alert alert-danger"
+             *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors.required">
+                First Name is Required!
+            </div>
+            <div *ngIf="firstName.errors.minlength">
+                FirstName should be minimum {{ firstName.errors.minlength.requiredLength }} characters!
+            </div>
+            <div *ngIf="firstName.errors.pattern">
+                FirstName should be 'banana' (pattern)
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label for="comment">Comment</label>
-            <textarea ngModel name="comment" class="form-control" cols="30" rows="10" id="comment">
+        <textarea ngModel name="comment" class="form-control" cols="30" rows="10" id="comment">
             </textarea>
     </div>
     <button class="btn btn-primary">Submit</button>
