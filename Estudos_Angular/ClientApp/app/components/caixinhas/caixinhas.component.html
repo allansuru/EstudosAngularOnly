@@ -1,22 +1,25 @@
-﻿<h2>Caixinhas</h2>
+﻿<h2>Caixinhas</h2> 
+<form #f="ngForm">
+    <div class="container">
 
-<div class="container">
-
-    <ul>
-        <li *ngFor="let p of products">
-            <bootstrap-panel>
-                <ng-container class="heading">
-                    <h2>  {{ p.ProductName }}</h2>
-                </ng-container>
-                <div class="body">
-                    <h3>{{ p.QuantityPerUnit }}</h3>
-                </div>
-            </bootstrap-panel>
-        </li>
-    </ul>
-
-
-
-</div>
+        <ul>
+            <li *ngFor="let p of productsList">
+                <bootstrap-panel>
+                    <ng-container class="heading">
+                        <h2>  {{ p.ProductName }}</h2>
+                    </ng-container>
+                    <div class="body">
+                        <h3>{{ p.QuantityPerUnit }}</h3>
+                        <div class="form-group">
+                            <button class="btn btn-danger" name=""  (click)="delete(p.ProductId)">Deletar</button>
+                            </div>
+                        </div>
+                </bootstrap-panel>
+            </li>
+        </ul>
 
 
+
+    </div>
+
+</form>

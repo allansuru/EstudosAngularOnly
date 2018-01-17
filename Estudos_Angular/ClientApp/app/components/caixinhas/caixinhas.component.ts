@@ -10,7 +10,8 @@ import { ProductService } from './../../services/product.service'
 
 export class CaixinhasComponent implements OnInit {
 
-    products: Product[];
+    productsList: Product[];
+
 
     constructor(private productService: ProductService) { }
 
@@ -19,13 +20,22 @@ export class CaixinhasComponent implements OnInit {
 
 
     }
+    public delete(id: number) {
+        console.log('ID', id);
+        this.productService.deleteProduct(id)
+            .subscribe(x => {
+                console.log('Deletado com sucesso: ', id);
+                this.getProducts();
+            });
+
+    }
 
     private getProducts() {
         this.productService.getProducts()
             .subscribe(p => {
-                this.products = p
+                this.productsList = p
 
-                console.log('Produtos', this.products);
+                console.log('Produtos', this.productsList);
                 //console.log('JSON', JSON.stringify(this.products));
 
             });

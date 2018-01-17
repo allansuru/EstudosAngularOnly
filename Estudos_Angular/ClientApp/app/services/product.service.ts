@@ -8,12 +8,17 @@ import 'rxjs/add/operator/map';
 export class ProductService {
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
+    private readonly productEndpoint = 'http://localhost:35717/api/Product'
 
     constructor(private http: Http) { }
 
     getProducts() {
-        return this.http.get('http://localhost:35717/api/Product')
+        return this.http.get(this.productEndpoint)
             .map(res => res.json());
+    }
+    deleteProduct(id: any) {
+        return this.http.delete(this.productEndpoint + '/' + id)
+            //.map(res => res.json());
     }
 
 }
