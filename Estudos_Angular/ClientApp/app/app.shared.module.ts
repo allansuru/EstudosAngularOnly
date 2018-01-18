@@ -17,6 +17,7 @@ import { ColapseComponent } from "./components/colapse/colapse.component";
 import { CaixinhasComponent } from "./components/caixinhas/caixinhas.component";
 import { ProductService } from "./services/product.service";
 import { ContactComponent } from "./components/contact/contact.component";
+import { SupplierService } from "./services/supplier.service";
 
 //Aqui no @ngModule registro todos componentes, pipes e diretivas
 @NgModule({
@@ -49,7 +50,8 @@ import { ContactComponent } from "./components/contact/contact.component";
     ]
     ,
     providers: [
-        ProductService
+        ProductService,
+        SupplierService
     ]
 })
 export class AppModuleShared {
