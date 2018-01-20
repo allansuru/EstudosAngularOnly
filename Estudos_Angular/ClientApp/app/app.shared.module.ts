@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -18,6 +18,8 @@ import { CaixinhasComponent } from "./components/caixinhas/caixinhas.component";
 import { ProductService } from "./services/product.service";
 import { ContactComponent } from "./components/contact/contact.component";
 import { SupplierService } from "./services/supplier.service";
+import { SignupFormComponent } from "./components/reactiveForm/signup-form.component";
+import { NewCousesComponent } from "./components/newCoursesForms/news-courses.component";
 
 //Aqui no @ngModule registro todos componentes, pipes e diretivas
 @NgModule({
@@ -33,25 +35,30 @@ import { SupplierService } from "./services/supplier.service";
         InputFormatDirective,
         ColapseComponent,
         CaixinhasComponent,
-        ContactComponent
+        ContactComponent,
+        SignupFormComponent,
+        NewCousesComponent
     ],
     imports: [
         CommonModule,
         HttpModule,
         FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'caixinhas', component: CaixinhasComponent },
+            { path: 'reactive-form', component: SignupFormComponent },
+            { path: 'new-courses', component: NewCousesComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
     ,
     providers: [
         ProductService,
-        SupplierService
+        SupplierService 
     ]
 })
 export class AppModuleShared {
