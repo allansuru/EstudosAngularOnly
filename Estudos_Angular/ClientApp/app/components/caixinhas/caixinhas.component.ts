@@ -88,14 +88,11 @@ export class CaixinhasComponent implements OnInit {
 
         if (p == 0) {
             delete this.supplier.id;
-        }
-        else
-        {
-          //  this.getSuppliers();
-        }
-
-        
+        }     
     }
 
-
+    validShowProducts(product: any) {
+        let result = (product.SupplierID == 5 || product.SupplierID == 1) ? true : false
+        return result;
+    }
 }

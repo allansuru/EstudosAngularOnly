@@ -1,13 +1,11 @@
 ﻿<h2>Caixinhas</h2> 
 <form #f="ngForm">
     <div class="container">
-    {{ product | json }}
-    {{ supplier | json }}
         <div class="form-group">
             <label>Firsts Products</label>
             <select class="form-control" id="product" [(ngModel)]="product.id" (change)="limpaSupplier(product.id)"  name="productId">
                 <option value="0"></option>
-                <option *ngFor="let p of productsFirsts" [value]="p.ProductId">{{ p.ProductName }}</option>
+                <option *ngFor="let p of productsList" [value]="p.ProductId">{{ p.ProductName }}</option>
             </select>
         </div>
         <div class="form-group">
@@ -19,8 +17,8 @@
         </div>
 
         <ul>
-            <li *ngFor="let p of productsList">
-                <bootstrap-panel>
+            <li *ngFor="let p of productsList"> 
+                <bootstrap-panel  *ngIf="validShowProducts(p)">
                     <ng-container class="heading">
                         <h2>  {{ p.ProductName }}</h2>
                     </ng-container>
