@@ -16,7 +16,7 @@ export class CaixinhasComponent implements OnInit {
     productsList: Product[];
     supplierList: Supplier[];
 
-    size: number = 20;
+    size: number = 4;
     productsFirsts: any = [];
     supplirsFirsts: Supplier[];
 
@@ -129,14 +129,20 @@ export class CaixinhasComponent implements OnInit {
         });
     }
 
-    modificaPrd(p: any) {
+    modificaPrd(p: any[]) {
 
-        for (var i = 0; i < p.length; i++) {
-            if (p[i].ProductId == 76) {
-                p[i].ProductId = 77;
-                console.log('Produto Modificado pra burlar o ngIf: ', p[i]);
-            }
-        }
+        let modifica = p.filter(x => x.ProductId == 76)
+        modifica[0].ProductId = 77;
+
+        console.log('MODIFICA: ', modifica);
+
+
+        //for (var i = 0; i < p.length; i++) {
+        //    if (p[i].ProductId == 76) {
+        //        p[i].ProductId = 77;
+        //        console.log('Produto Modificado pra burlar o ngIf: ', p[i]);
+        //    }
+        //}
 
   
     }

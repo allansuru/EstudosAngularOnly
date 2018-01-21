@@ -20,6 +20,7 @@ import { ContactComponent } from "./components/contact/contact.component";
 import { SupplierService } from "./services/supplier.service";
 import { SignupFormComponent } from "./components/reactiveForm/signup-form.component";
 import { NewCousesComponent } from "./components/newCoursesForms/news-courses.component";
+import { PostsComponent } from "./components/posts/posts.component";
 
 //Aqui no @ngModule registro todos componentes, pipes e diretivas
 @NgModule({
@@ -37,7 +38,8 @@ import { NewCousesComponent } from "./components/newCoursesForms/news-courses.co
         CaixinhasComponent,
         ContactComponent,
         SignupFormComponent,
-        NewCousesComponent
+        NewCousesComponent,
+        PostsComponent
     ],
     imports: [
         CommonModule,
@@ -52,6 +54,7 @@ import { NewCousesComponent } from "./components/newCoursesForms/news-courses.co
             { path: 'caixinhas', component: CaixinhasComponent },
             { path: 'reactive-form', component: SignupFormComponent },
             { path: 'new-courses', component: NewCousesComponent },
+            { path: 'posts', component: PostsComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
