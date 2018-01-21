@@ -9,7 +9,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label>Firsts Products</label>
+            <label>Firsts Suppliers</label>
             <select class="form-control" id="supplier" [(ngModel)]="supplier.id" name="supplierId" [disabled]="product.id == 0">
                 <option value=""></option>
                 <option  *ngFor="let s of supplirsFirsts" [value]="s.SupplierId">{{ s.CompanyName }}</option>

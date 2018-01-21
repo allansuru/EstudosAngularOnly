@@ -18,7 +18,7 @@ export class CaixinhasComponent implements OnInit {
 
     size: number = 4;
     productsFirsts: any = [];
-    supplirsFirsts: any = [];
+    supplirsFirsts: Supplier[];
 
     product = {
         id: 0,
@@ -61,16 +61,16 @@ export class CaixinhasComponent implements OnInit {
     }
 
     private getProducts() {
+
         this.productService.getProducts()
             .subscribe(p => {
                 this.productsList = p;
-          
+       
                 console.log('Produtos', this.productsList);
                 this.productsFirsts = this.productsList.slice(0, 4);
                 console.log('Firsts', this.productsFirsts);
 
-                //console.log('JSON', JSON.stringify(this.products));
-
+                this.modificaPrd(this.productsList);
             });
     }
 
@@ -79,6 +79,7 @@ export class CaixinhasComponent implements OnInit {
             .subscribe(s => {
                 this.supplierList = s;
                 this.supplirsFirsts = this.supplierList.slice(0, this.size);
+                this.supplierRecebe(this.supplirsFirsts);
                 console.log('Suppliers', this.supplierList);
             });
     }
@@ -92,7 +93,30 @@ export class CaixinhasComponent implements OnInit {
     }
 
     validShowProducts(product: any) {
-        let result = (product.SupplierID == 5 || product.SupplierID == 1) && product.UnitPrice > 20 ? true : false
+        let result = (product.SupplierID == 5 || product.SupplierID == 1 || product.ProductId == 77) && product.UnitPrice >= 13 ? true : false
         return result;
+    }
+
+    supplierRecebe(lstSuplier: any) {
+
+        lstSuplier.push({
+            'City': 'Cidade da Porral',
+            'CompanyName': 'Compania da Porral',
+            'ContactName': 'Contact Name da Porra',
+            'Country': 'BR',
+            'SupplierId': 1
+        });
+    }
+
+    modificaPrd(p: any) {
+
+        for (var i = 0; i < p.length; i++) {
+            if (p[i].ProductId == 76) {
+                p[i].ProductId = 77;
+                console.log('Produto Modificado pra burlar o ngIf: ', p[i]);
+            }
+        }
+
+  
     }
 }
