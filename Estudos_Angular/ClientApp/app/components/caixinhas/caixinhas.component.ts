@@ -93,7 +93,7 @@ export class CaixinhasComponent implements OnInit {
     }
 
     validShowProducts(product: any) {
-        let result = (product.SupplierID == 5 || product.SupplierID == 1 || product.ProductId == 77) && product.UnitPrice >= 13 ? true : false
+        let result = (product.SupplierID == 5 || product.SupplierID == 1 || product.ProductId == 77 || product.ProductId == 30) && (product.UnitPrice >= 10) ? true : false
         return result;
     }
 
