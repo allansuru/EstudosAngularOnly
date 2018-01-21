@@ -16,7 +16,7 @@ export class CaixinhasComponent implements OnInit {
     productsList: Product[];
     supplierList: Supplier[];
 
-    size: number = 4;
+    size: number = 20;
     productsFirsts: any = [];
     supplirsFirsts: Supplier[];
 
@@ -93,7 +93,28 @@ export class CaixinhasComponent implements OnInit {
     }
 
     validShowProducts(product: any) {
-        let result = (product.SupplierID == 5 || product.SupplierID == 1 || product.ProductId == 77 || product.ProductId == 30) && (product.UnitPrice >= 10) ? true : false
+        let result;
+
+        if (this.size == 4) {
+            result = (product.SupplierID == 5
+                   || product.SupplierID == 1
+                   || product.ProductId == 77
+                   || product.ProductId == 30)
+                   && (product.UnitPrice >= 10)
+                ? true : false
+        }
+        else if (this.size == 20) {
+            result = (product.SupplierID == 5
+                || product.SupplierID == 1
+                || product.SupplierID == 2
+                || product.SupplierID == 3
+                || product.SupplierID == 4
+                || product.ProductId == 77
+                || product.ProductId == 30)
+                && (product.UnitPrice >= 10)
+                ? true : false
+        }
+   
         return result;
     }
 
