@@ -136,7 +136,7 @@ export class CaixinhasComponent implements OnInit {
 
         console.log('MODIFICA: ', modifica);
 
-
+        //Jeito velho, melhor usar o filter
         //for (var i = 0; i < p.length; i++) {
         //    if (p[i].ProductId == 76) {
         //        p[i].ProductId = 77;

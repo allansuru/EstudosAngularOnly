@@ -5,7 +5,7 @@ div.panel.panel-default>div.panel-heading+div.panel-body
    div.form-group
     label+input[type='text'].form-control
 	 div.form-group>label[for='contactMethod']+select[id='contactMethod'].form-control
-
+	 ul.list-group>li.list-group-item
 
 -- docs
 http://angular.io
