@@ -6,6 +6,7 @@ div.panel.panel-default>div.panel-heading+div.panel-body
     label+input[type='text'].form-control
 	 div.form-group>label[for='contactMethod']+select[id='contactMethod'].form-control
 	 ul.list-group>li.list-group-item
+	   btn.btn.default.btn-sm
 
 -- docs
 http://angular.io

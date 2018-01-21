@@ -41,4 +41,25 @@ export class PostsComponent {
                 console.log(response.json());
             });
     }
+
+    updatePost(post: any) {
+        // patch, faz update somente em uma propriedade específica q vc define, como o exemplo abaixo
+        // diferente do put que salva um objeto inteiro, então tudo depende do que vc quer!!
+        this.http.patch(this.url + '/' + post.id, JSON.stringify({isRead: true}))
+            .subscribe(response => {
+                console.log(response.json());
+            })
+    }
+
+    deletePost(post: any) {
+
+        this.http.delete(this.url + '/' + post.id)
+            .subscribe(response => {
+                let index = this.posts.indexOf(post);
+                console.log(index);
+                this.posts.splice(index, 1); //limpando o deletado da lista que recebe o objeto
+                console.log(response);
+            });
+    }
+
 }
