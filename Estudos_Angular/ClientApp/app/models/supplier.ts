@@ -2,6 +2,6 @@
     id: number,
     companyName: string,
     contactName: string,
-    city: string,
+    City: string,
     country: string
 }

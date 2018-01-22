@@ -1,0 +1,36 @@
+﻿<h2>Filtros - Suppliers</h2>
+<div class="form-group">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Brasil">
+        <label class="form-check-label" for="inlineCheckbox1">Brasil</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="France">
+        <label class="form-check-label" for="inlineCheckbox2">France</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Canada" disabled>
+        <label class="form-check-label" for="inlineCheckbox3">Canada</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Canada" disabled>
+        <label class="form-check-label" for="inlineCheckbox3">Canada</label>
+    </div>
+</div>
+<div class="well">
+    <div class="form-group">
+        {{ query.City }}
+        <label for="supplier">City</label>
+        <select id="supplier" class="form-control" [(ngModel)]="query.City" (change)="onFilterChange(query.City)">
+            <option value=""></option>
+            <option *ngFor="let c of supplierList" value="{{c.City }}">{{ c.City }}</option>
+        </select>
+    </div>
+</div>
+<div class="form-group">
+    <ul>
+        <li *ngFor="let q of queryResult">
+           {{q.Country}} -  {{ q.City }} - {{ q.CompanyName }}
+        </li>
+    </ul>
+</div>

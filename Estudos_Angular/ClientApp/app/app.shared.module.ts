@@ -21,6 +21,7 @@ import { SupplierService } from "./services/supplier.service";
 import { SignupFormComponent } from "./components/reactiveForm/signup-form.component";
 import { NewCousesComponent } from "./components/newCoursesForms/news-courses.component";
 import { PostsComponent } from "./components/posts/posts.component";
+import { FilterSupplierComponent } from "./components/filter-supplier/filter-supplier.component";
 
 //Aqui no @ngModule registro todos componentes, pipes e diretivas
 @NgModule({
@@ -39,7 +40,8 @@ import { PostsComponent } from "./components/posts/posts.component";
         ContactComponent,
         SignupFormComponent,
         NewCousesComponent,
-        PostsComponent
+        PostsComponent,
+        FilterSupplierComponent
     ],
     imports: [
         CommonModule,

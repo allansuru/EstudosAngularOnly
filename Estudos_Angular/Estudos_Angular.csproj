@@ -25,6 +25,7 @@
   <ItemGroup>
     <None Remove="ClientApp\app\components\colapse\colapse.component.ts" />
     <None Remove="ClientApp\app\components\contact\contact.component.ts" />
+    <None Remove="ClientApp\app\components\filter-supplier\filter-supplier.component.ts" />
     <None Remove="ClientApp\app\components\newCoursesForms\news-courses.component.ts" />
     <None Remove="ClientApp\app\components\panel\panel.component.ts" />
     <None Remove="ClientApp\app\components\reactiveForm\signup-form.component.spec.ts" />
@@ -41,6 +42,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\components\colapse\colapse.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\contact\contact.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\filter-supplier\filter-supplier.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\newCoursesForms\news-courses.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\panel\panel.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\reactiveForm\signup-form.component.spec.ts" />

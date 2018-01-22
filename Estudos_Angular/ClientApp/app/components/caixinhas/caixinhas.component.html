@@ -15,7 +15,6 @@
                 <option  *ngFor="let s of supplirsFirsts" [value]="s.SupplierId">{{ s.CompanyName }}</option>
             </select>
         </div>
-
         <ul>
             <li *ngFor="let p of productsList"> 
                 <bootstrap-panel  *ngIf="validShowProducts(p)">
@@ -31,9 +30,10 @@
                 </bootstrap-panel>
             </li>
         </ul>
-
-
-
+        <br />
+        <div>
+            <filter-supplier></filter-supplier>
+        </div>
     </div>
 
 </form>
