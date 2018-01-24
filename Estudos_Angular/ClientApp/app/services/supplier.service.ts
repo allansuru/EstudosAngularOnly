@@ -1,5 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
+import { Supplier } from '../models/supplier'
 import 'rxjs/add/operator/map';
 
 
@@ -14,6 +15,11 @@ export class SupplierService {
 
     getSuppliers() {
         return this.http.get(this.supplierEndpoint)
+            .map(res => res.json());
+    }
+
+    getInSuppliers(filtros: any) {
+        return this.http.post(this.supplierEndpoint, filtros)
             .map(res => res.json());
     }
  

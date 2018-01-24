@@ -3,5 +3,7 @@
     companyName: string,
     contactName: string,
     City: string,
-    country: string
+    country: string,
+    ids: number[]
+
 }
