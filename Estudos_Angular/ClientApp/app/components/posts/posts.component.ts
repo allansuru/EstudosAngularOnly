@@ -22,7 +22,8 @@ export class PostsComponent implements OnInit {
 
     getPosts() {
         this.postService.getPosts()
-            .subscribe(response => {
+            .subscribe(
+            response => {
                 this.posts = response;
                 console.log(JSON.stringify(this.posts));
 
@@ -30,8 +31,15 @@ export class PostsComponent implements OnInit {
                 this.filterPosts = this.posts.filter(x => x.userId == 1);
                 console.log(this.filterPosts);
 
-            }, error => {
-                console.log("Erro", error);
+            },
+            (error: Response) => {
+                if (error.status === 404) {
+                    console.log("Não existe!");
+                } 
+                else {
+                    console.log("Erro: ", error);
+                }
+               
             });
     }
 
@@ -42,13 +50,21 @@ export class PostsComponent implements OnInit {
         }
         titleInput.value = '';
         this.postService.createPost(post.id)
-            .subscribe(response => {
+            .subscribe(
+            response => {
                 post.id = response.id;
                 //this.posts.push(post) == final da lista, pra colocar no começo da lista use a tecnica abaixo
                 this.posts.splice(0, 0, post);
                 console.log(response);
-            }, error => {
-                console.log("Erro", error);
+            },
+            (error: Response) => {
+                if (error.status === 400) {
+                    console.log("Não existe!", error.json());
+                }
+                else {
+                    console.log("Erro: ", error);
+                }
+
             });
     }
 
@@ -56,23 +72,32 @@ export class PostsComponent implements OnInit {
         // patch, faz update somente em uma propriedade específica q vc define, como o exemplo abaixo
         // diferente do put que salva um objeto inteiro, então tudo depende do que vc quer!!
         this.postService.updatePost(post.id)
-            .subscribe(response => {
+            .subscribe(
+            response => {
                 console.log(response);
-            }, error => {
+            },
+            error => {
                 console.log("Erro", error);
             });
     }
 
     deletePost(post: any) {
-
         this.postService.deletePost(post.id)
-            .subscribe(response => {
+            .subscribe(
+            response => {
                 let index = this.posts.indexOf(post);
                 console.log(index);
                 this.posts.splice(index, 1); //limpando o deletado da lista que recebe o objeto
                 console.log(response);
-            }, error => {
-                console.log("Erro", error);
+            },
+            (error: Response) => {
+                if (error.status === 404) {
+                    console.log("Esse poste já foi deletado");
+                }
+                else {
+                    console.log("Erro: ", error);
+                }
+
             });
     }
 
