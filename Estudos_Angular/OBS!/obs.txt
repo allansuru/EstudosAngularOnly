@@ -11,5 +11,6 @@ div.panel.panel-default>div.panel-heading+div.panel-body
 -- docs
 http://angular.io
 https://www.tutorialspoint.com/typescript/typescript_array_slice.htm
+https://valor-software.com/ngx-bootstrap/#/ 
 
 

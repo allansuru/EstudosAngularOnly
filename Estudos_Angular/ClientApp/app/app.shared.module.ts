@@ -22,6 +22,8 @@ import { SignupFormComponent } from "./components/reactiveForm/signup-form.compo
 import { NewCousesComponent } from "./components/newCoursesForms/news-courses.component";
 import { PostsComponent } from "./components/posts/posts.component";
 import { FilterSupplierComponent } from "./components/filter-supplier/filter-supplier.component";
+import { NgxComponent } from "./components/ngx-bootstrap/ngx.component";
+import { TabsModule } from "ngx-bootstrap";
 
 //Aqui no @ngModule registro todos componentes, pipes e diretivas
 @NgModule({
@@ -41,12 +43,14 @@ import { FilterSupplierComponent } from "./components/filter-supplier/filter-sup
         SignupFormComponent,
         NewCousesComponent,
         PostsComponent,
-        FilterSupplierComponent
+        FilterSupplierComponent,
+        NgxComponent
     ],
     imports: [
         CommonModule,
         HttpModule,
         FormsModule,
+        TabsModule.forRoot(),
         ReactiveFormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -57,6 +61,7 @@ import { FilterSupplierComponent } from "./components/filter-supplier/filter-sup
             { path: 'reactive-form', component: SignupFormComponent },
             { path: 'new-courses', component: NewCousesComponent },
             { path: 'posts', component: PostsComponent },
+            { path: 'ngx', component: NgxComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
