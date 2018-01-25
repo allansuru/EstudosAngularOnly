@@ -36,8 +36,10 @@
     <None Remove="ClientApp\app\directives\input-format.directive.ts" />
     <None Remove="ClientApp\app\models\product.ts" />
     <None Remove="ClientApp\app\models\supplier.ts" />
+    <None Remove="ClientApp\app\services\posts.service.ts" />
     <None Remove="ClientApp\app\services\product.service.ts" />
     <None Remove="ClientApp\app\services\supplier.service.ts" />
+    <None Remove="OBS!\Prints\estudo_ingles_AllanPassos.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -54,6 +56,7 @@
     <TypeScriptCompile Include="ClientApp\app\directives\input-format.directive.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\product.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\supplier.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\posts.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\product.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\supplier.service.ts" />
   </ItemGroup>

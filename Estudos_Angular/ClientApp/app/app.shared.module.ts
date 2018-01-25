@@ -24,6 +24,9 @@ import { PostsComponent } from "./components/posts/posts.component";
 import { FilterSupplierComponent } from "./components/filter-supplier/filter-supplier.component";
 import { NgxComponent } from "./components/ngx-bootstrap/ngx.component";
 import { TabsModule } from "ngx-bootstrap";
+import { PostService } from "./services/posts.service";
+
+
 
 //Aqui no @ngModule registro todos componentes, pipes e diretivas
 @NgModule({
@@ -68,7 +71,8 @@ import { TabsModule } from "ngx-bootstrap";
     ,
     providers: [
         ProductService,
-        SupplierService 
+        SupplierService,
+        PostService
     ]
 })
 export class AppModuleShared {

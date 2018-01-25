@@ -12,5 +12,22 @@ div.panel.panel-default>div.panel-heading+div.panel-body
 http://angular.io
 https://www.tutorialspoint.com/typescript/typescript_array_slice.htm
 https://valor-software.com/ngx-bootstrap/#/ 
+https://jsonformatter.curiousconcept.com/
+http://jsonplaceholder.typicode.com/
 
 
+GIT!
+
+
+git clone URL
+git status - verifica mudanças
+git add --all - adiciona todas as mudanças
+git commit -m "testando meu git" - 
+git pull - volta para o original caso eu erre algo!! ou pegar a versao original​
+git push origin
+
+
+NG CLI
+
+- ng g s nome
+- ng g c nome

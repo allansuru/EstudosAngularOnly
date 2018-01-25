@@ -9,14 +9,13 @@
                    id="{{i}}"
                     [checked]="filtroCidades.id.includes(i)"
                    (change)="addIds(i, $event)"
-                   [disabled]="filtroCidades.id.length == 1"
                    > 
             {{ estado }}
         </label>
     </div>
 </div>
 <div class="form-group">
-    aqui
+    <br />
     <ul>
         <li *ngFor="let filtrado of supplierListFilter">
             {{ filtrado.CompanyName }} - {{ filtrado.ContactName }} - {{ filtrado.Country }} - {{ filtrado.City }}
