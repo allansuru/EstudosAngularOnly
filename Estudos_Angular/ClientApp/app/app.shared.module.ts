@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -25,6 +25,7 @@ import { FilterSupplierComponent } from "./components/filter-supplier/filter-sup
 import { NgxComponent } from "./components/ngx-bootstrap/ngx.component";
 import { TabsModule } from "ngx-bootstrap";
 import { PostService } from "./services/posts.service";
+import { AppErrorHandler } from "./common/app-error-handler";
 
 
 
@@ -72,7 +73,10 @@ import { PostService } from "./services/posts.service";
     providers: [
         ProductService,
         SupplierService,
-        PostService
+        PostService,
+        //to dizendo que, to substindo o ErrorHandler, para um outro manipulador de erro q eu customizei, no caso, o AppErrorHandler
+        { provide: ErrorHandler, useClass: AppErrorHandler }
+        
     ]
 })
 export class AppModuleShared {

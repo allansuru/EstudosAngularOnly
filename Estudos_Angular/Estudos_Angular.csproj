@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\common\app-error-handler.ts" />
     <None Remove="ClientApp\app\common\app-error.ts" />
     <None Remove="ClientApp\app\common\not-exist-error.ts" />
     <None Remove="ClientApp\app\common\not-found-error.ts" />
@@ -46,6 +47,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\common\app-error-handler.ts" />
     <TypeScriptCompile Include="ClientApp\app\common\app-error.ts" />
     <TypeScriptCompile Include="ClientApp\app\common\not-exist-error.ts" />
     <TypeScriptCompile Include="ClientApp\app\common\not-found-error.ts" />
