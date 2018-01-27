@@ -5,6 +5,7 @@ import { NotFoundError } from './../common/not-found-error';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 import { NotExistError } from "../common/not-exist-error";
 
 
@@ -21,6 +22,8 @@ export class DataService {
     }
 
     create(resource: any) {
+        //return Observable.throw(new AppError());
+
         return this.http.post(this.url, JSON.stringify(resource))
             .map(response => response.json())
             .catch(this.handleError);
@@ -33,6 +36,8 @@ export class DataService {
     }
 
     delete(id: number) {
+            //return Observable.throw(new AppError());
+
         return this.http.delete(this.url + '/' + id)
             .map(response => response.json())
             .catch(this.handleError);

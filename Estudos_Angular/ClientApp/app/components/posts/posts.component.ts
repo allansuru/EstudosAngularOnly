@@ -27,8 +27,8 @@ export class PostsComponent implements OnInit {
     getPosts() {
         this.postService.getAll()
             .subscribe(
-            response => {
-                this.posts = response;
+            posts => {
+                this.posts = posts;
                // console.log(JSON.stringify(this.posts));
                 this.filterPosts = this.posts.filter(x => x.userId == 2);
                 console.log('Só filtrando: ', this.filterPosts);
@@ -41,16 +41,20 @@ export class PostsComponent implements OnInit {
             id: 0,
             title: titleInput.value
         }
+        this.posts.splice(0, 0, post);
+
         titleInput.value = '';
+
         this.postService.create(post.id)
             .subscribe(
-            response => {
-                post.id = response.id;
+            newPost => {
+                post.id = newPost.id;
                 //this.posts.push(post) == final da lista, pra colocar no começo da lista use a tecnica abaixo
-                this.posts.splice(0, 0, post);
-                console.log(response);
+
+                console.log(newPost);
             },
             (error: AppError) => {
+                this.posts.splice(0, 1);
                 if (error instanceof NotExistError) {
                     console.log("Não existe - erro 400!");
                 }
@@ -64,21 +68,23 @@ export class PostsComponent implements OnInit {
         // diferente do put que salva um objeto inteiro, então tudo depende do que vc quer!!
         this.postService.update(post.id)
             .subscribe(
-            response => {
-                console.log(response);
+            updatePost => {
+                console.log(updatePost);
             });
     }
 
     deletePost(post: any) {
+        let index = this.posts.indexOf(post);
+        console.log('index item: ', index);
+        this.posts.splice(index, 1); //limpando o deletado da lista que recebe o objeto
+
         this.postService.delete(post.id)
-            .subscribe(
-            response => {
-                let index = this.posts.indexOf(post);
-                console.log(index);
-                this.posts.splice(index, 1); //limpando o deletado da lista que recebe o objeto
-                console.log(response);
+            .subscribe( deletePost => {
+                console.log(deletePost);
             },
             (error: AppError) => {
+                this.posts.splice(index, 0, post);
+
                 if (error instanceof NotFoundError) {
                     console.log("Esse poste já foi deletado - erro 404!");
                 }
