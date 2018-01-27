@@ -89,6 +89,7 @@ export class FilterSupplierComponent implements OnInit {
 
         }
 
+
         this.trataUltimo(id, $event);
     }
 

@@ -23,6 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\common\app-error.ts" />
+    <None Remove="ClientApp\app\common\not-exist-error.ts" />
+    <None Remove="ClientApp\app\common\not-found-error.ts" />
     <None Remove="ClientApp\app\components\colapse\colapse.component.ts" />
     <None Remove="ClientApp\app\components\contact\contact.component.ts" />
     <None Remove="ClientApp\app\components\filter-supplier\filter-supplier.component.ts" />
@@ -43,6 +46,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\common\app-error.ts" />
+    <TypeScriptCompile Include="ClientApp\app\common\not-exist-error.ts" />
+    <TypeScriptCompile Include="ClientApp\app\common\not-found-error.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\colapse\colapse.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\contact\contact.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\filter-supplier\filter-supplier.component.ts" />

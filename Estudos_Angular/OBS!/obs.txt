@@ -28,6 +28,7 @@ git push origin
 
 
 NG CLI
+https://cli.angular.io/
 
 - ng g s nome
 - ng g c nome

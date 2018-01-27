@@ -1,5 +1,8 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { PostService } from "../../services/posts.service";
+import { AppError } from "../../common/app-error";
+import { NotFoundError } from "../../common/not-found-error";
+import { NotExistError } from "../../common/not-exist-error";
 
 @Component({
     selector: 'posts',
@@ -57,9 +60,9 @@ export class PostsComponent implements OnInit {
                 this.posts.splice(0, 0, post);
                 console.log(response);
             },
-            (error: Response) => {
-                if (error.status === 400) {
-                    console.log("Não existe!", error.json());
+            (error: AppError) => {
+                if (error instanceof NotExistError) {
+                    console.log("Não existe - erro 400!");
                 }
                 else {
                     console.log("Erro: ", error);
@@ -90,9 +93,9 @@ export class PostsComponent implements OnInit {
                 this.posts.splice(index, 1); //limpando o deletado da lista que recebe o objeto
                 console.log(response);
             },
-            (error: Response) => {
-                if (error.status === 404) {
-                    console.log("Esse poste já foi deletado");
+            (error: AppError) => {
+                if (error instanceof NotFoundError) {
+                    console.log("Esse poste já foi deletado - erro 404!");
                 }
                 else {
                     console.log("Erro: ", error);
