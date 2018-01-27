@@ -1,24 +1,16 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { DataService } from "./data.service";
 
 
 @Injectable()
 
-export class ProductService {
+export class ProductService extends DataService {
 
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private readonly productEndpoint = 'http://localhost:35717/api/Product'
+    //private headers = new Headers({ 'Content-Type': 'application/json' });
 
-    constructor(private http: Http) { }
-
-    getProducts() {
-        return this.http.get(this.productEndpoint)
-            .map(res => res.json());
-    }
-    deleteProduct(id: any) {
-        return this.http.delete(this.productEndpoint + '/' + id)
-            //.map(res => res.json());
+    constructor(http: Http) {
+        super('http://localhost:35717/api/Product', http);
     }
 
 }

@@ -25,7 +25,7 @@ export class PostsComponent implements OnInit {
     }
 
     getPosts() {
-        this.postService.getPosts()
+        this.postService.getAll()
             .subscribe(
             response => {
                 this.posts = response;
@@ -42,7 +42,7 @@ export class PostsComponent implements OnInit {
             title: titleInput.value
         }
         titleInput.value = '';
-        this.postService.createPost(post.id)
+        this.postService.create(post.id)
             .subscribe(
             response => {
                 post.id = response.id;
@@ -62,7 +62,7 @@ export class PostsComponent implements OnInit {
     updatePost(post: any) {
         // patch, faz update somente em uma propriedade específica q vc define, como o exemplo abaixo
         // diferente do put que salva um objeto inteiro, então tudo depende do que vc quer!!
-        this.postService.updatePost(post.id)
+        this.postService.update(post.id)
             .subscribe(
             response => {
                 console.log(response);
@@ -70,7 +70,7 @@ export class PostsComponent implements OnInit {
     }
 
     deletePost(post: any) {
-        this.postService.deletePost(post.id)
+        this.postService.delete(post.id)
             .subscribe(
             response => {
                 let index = this.posts.indexOf(post);

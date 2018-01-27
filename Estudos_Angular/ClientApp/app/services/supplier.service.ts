@@ -1,27 +1,20 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Supplier } from '../models/supplier'
-import 'rxjs/add/operator/map';
+import { DataService } from "./data.service";
 
 
 @Injectable()
 
-export class SupplierService {
+export class SupplierService extends DataService {
 
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private readonly supplierEndpoint = 'http://localhost:35717/api/Supplier'
+    //private headers = new Headers({ 'Content-Type': 'application/json' });
 
-    constructor(private http: Http) { }
-
-    getSuppliers() {
-        return this.http.get(this.supplierEndpoint)
-            .map(res => res.json());
+    constructor(http: Http) {
+        super('http://localhost:35717/api/Supplier', http);
     }
 
-    getInSuppliers(filtros: any) {
-        return this.http.post(this.supplierEndpoint, filtros)
-            .map(res => res.json());
-    }
+  
  
 
 }

@@ -28,13 +28,13 @@ export class FilterSupplierComponent implements OnInit {
 
     ngOnInit() {
         this.getSuppliers();
-        this.getinSuppliers();  
+       // this.getinSuppliers();  
 
         console.log('Filtro Cidades: ', this.filtroCidades)
     }
 
     private getSuppliers() {
-        this.supplierService.getSuppliers()
+        this.supplierService.getAll()
             .subscribe(s => {
                 this.supplierList = s;
                 this.filtroCidades.tamanho = this.filtroCidades.estados.length;
@@ -104,8 +104,8 @@ export class FilterSupplierComponent implements OnInit {
     getinSuppliers() {
 
         let teste = [];
-        
-        this.supplierService.getInSuppliers({
+
+        this.supplierService.create({
             SupplierId: '0',
             CompanyName: '',
             ContactName: '',

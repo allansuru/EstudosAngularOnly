@@ -3,6 +3,8 @@ import { Product } from './../../models/product'
 import { ProductService } from './../../services/product.service'
 import { SupplierService } from "../../services/supplier.service";
 import { Supplier } from "../../models/supplier";
+import { AppError } from "../../common/app-error";
+import { NotFoundError } from "../../common/not-found-error";
 
 
 @Component({
@@ -52,17 +54,23 @@ export class CaixinhasComponent implements OnInit {
     }
     public delete(id: number) {
         console.log('ID', id);
-        this.productService.deleteProduct(id)
+        this.productService.delete(id)
             .subscribe(x => {
                 console.log('Deletado com sucesso: ', id);
                 this.getProducts();
-            });
+            },
+            (error: AppError) => {
+                if (error instanceof NotFoundError) {
+                    console.log("Esse poste já foi deletado - erro 404!");
+                }
+                else throw error
 
+            });
     }
 
     private getProducts() {
 
-        this.productService.getProducts()
+        this.productService.getAll()
             .subscribe(p => {
                 this.productsList = p;
        
@@ -75,7 +83,7 @@ export class CaixinhasComponent implements OnInit {
     }
 
     private getSuppliers() {
-        this.supplierService.getSuppliers()
+        this.supplierService.getAll()
             .subscribe(s => {
                 this.supplierList = s;
                 this.supplirsFirsts = this.supplierList.slice(0, this.size);
