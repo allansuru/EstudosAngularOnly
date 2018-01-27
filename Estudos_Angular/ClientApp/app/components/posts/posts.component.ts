@@ -28,7 +28,7 @@ export class PostsComponent implements OnInit {
             .subscribe(
             response => {
                 this.posts = response;
-                console.log(JSON.stringify(this.posts));
+               // console.log(JSON.stringify(this.posts));
 
 
                 this.filterPosts = this.posts.filter(x => x.userId == 1);
@@ -85,7 +85,7 @@ export class PostsComponent implements OnInit {
     }
 
     deletePost(post: any) {
-        this.postService.deletePost(post.id)
+        this.postService.deletePost(345)
             .subscribe(
             response => {
                 let index = this.posts.indexOf(post);
