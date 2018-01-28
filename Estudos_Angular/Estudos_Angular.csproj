@@ -30,6 +30,8 @@
     <None Remove="ClientApp\app\components\colapse\colapse.component.ts" />
     <None Remove="ClientApp\app\components\contact\contact.component.ts" />
     <None Remove="ClientApp\app\components\filter-supplier\filter-supplier.component.ts" />
+    <None Remove="ClientApp\app\components\github-followers\github-followers.component.ts" />
+    <None Remove="ClientApp\app\components\github-profile\github-profile.component.ts" />
     <None Remove="ClientApp\app\components\newCoursesForms\news-courses.component.ts" />
     <None Remove="ClientApp\app\components\ngx-bootstrap\ngx.component.ts" />
     <None Remove="ClientApp\app\components\panel\panel.component.ts" />
@@ -55,6 +57,8 @@
     <TypeScriptCompile Include="ClientApp\app\components\colapse\colapse.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\contact\contact.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\filter-supplier\filter-supplier.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\github-followers\github-followers.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\github-profile\github-profile.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\newCoursesForms\news-courses.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\ngx-bootstrap\ngx.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\panel\panel.component.ts" />
@@ -66,6 +70,7 @@
     <TypeScriptCompile Include="ClientApp\app\models\product.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\supplier.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\data.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\github-followers.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\posts.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\product.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\supplier.service.ts" />

@@ -26,6 +26,9 @@ import { NgxComponent } from "./components/ngx-bootstrap/ngx.component";
 import { TabsModule } from "ngx-bootstrap";
 import { PostService } from "./services/posts.service";
 import { AppErrorHandler } from "./common/app-error-handler";
+import { GithubFollowersComponent } from "./components/github-followers/github-followers.component";
+import { GithubFollowersService } from "./services/github-followers.service";
+import { GithubProfileComponent } from "./components/github-profile/github-profile.component";
 
 
 
@@ -48,7 +51,9 @@ import { AppErrorHandler } from "./common/app-error-handler";
         NewCousesComponent,
         PostsComponent,
         FilterSupplierComponent,
-        NgxComponent
+        NgxComponent,
+        GithubFollowersComponent,
+        GithubProfileComponent
     ],
     imports: [
         CommonModule,
@@ -66,6 +71,8 @@ import { AppErrorHandler } from "./common/app-error-handler";
             { path: 'new-courses', component: NewCousesComponent },
             { path: 'posts', component: PostsComponent },
             { path: 'ngx', component: NgxComponent },
+            { path: 'git-followers', component: GithubFollowersComponent },
+            { path: 'profile/:username', component: GithubProfileComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
@@ -74,6 +81,7 @@ import { AppErrorHandler } from "./common/app-error-handler";
         ProductService,
         SupplierService,
         PostService,
+        GithubFollowersService,
         //to dizendo que, to substindo o ErrorHandler, para um outro manipulador de erro q eu customizei, no caso, o AppErrorHandler
         { provide: ErrorHandler, useClass: AppErrorHandler }
         

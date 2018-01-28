@@ -37,10 +37,12 @@ export class PostsComponent implements OnInit {
     }
 
     createPost(titleInput: HTMLInputElement) {
+        console.log('Valor Input vindo de uma variável no HTML: ', titleInput);
         let post = {
             id: 0,
             title: titleInput.value
         }
+  //this.posts.push(post) == final da lista, pra colocar no começo da lista use a tecnica abaixo
         this.posts.splice(0, 0, post);
 
         titleInput.value = '';
@@ -49,8 +51,6 @@ export class PostsComponent implements OnInit {
             .subscribe(
             newPost => {
                 post.id = newPost.id;
-                //this.posts.push(post) == final da lista, pra colocar no começo da lista use a tecnica abaixo
-
                 console.log(newPost);
             },
             (error: AppError) => {
