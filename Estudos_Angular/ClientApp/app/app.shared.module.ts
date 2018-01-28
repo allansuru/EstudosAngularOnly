@@ -29,6 +29,7 @@ import { AppErrorHandler } from "./common/app-error-handler";
 import { GithubFollowersComponent } from "./components/github-followers/github-followers.component";
 import { GithubFollowersService } from "./services/github-followers.service";
 import { GithubProfileComponent } from "./components/github-profile/github-profile.component";
+import { NotFoundComponent } from "./components/not-found/not-found.component";
 
 
 
@@ -53,7 +54,8 @@ import { GithubProfileComponent } from "./components/github-profile/github-profi
         FilterSupplierComponent,
         NgxComponent,
         GithubFollowersComponent,
-        GithubProfileComponent
+        GithubProfileComponent,
+        NotFoundComponent
     ],
     imports: [
         CommonModule,
@@ -71,9 +73,10 @@ import { GithubProfileComponent } from "./components/github-profile/github-profi
             { path: 'new-courses', component: NewCousesComponent },
             { path: 'posts', component: PostsComponent },
             { path: 'ngx', component: NgxComponent },
-            { path: 'git-followers', component: GithubFollowersComponent },
-            { path: 'profile/:username', component: GithubProfileComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: 'followers/:username', component: GithubProfileComponent },
+            { path: 'followers', component: GithubFollowersComponent },
+            { path: '**', component: NotFoundComponent }
+           // { path: '**', redirectTo: 'home' }
         ])
     ]
     ,
