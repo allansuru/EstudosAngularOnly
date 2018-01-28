@@ -54,7 +54,9 @@
                     </a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/followers']">
+                    <a [routerLink]="['/followers']"
+                       [queryParams]="{page: 1, order: 'newest'}"
+                       >
                         <span class='si-glyph-alien'></span> Github-Followers
                     </a>
                 </li>

@@ -73,7 +73,7 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
             { path: 'new-courses', component: NewCousesComponent },
             { path: 'posts', component: PostsComponent },
             { path: 'ngx', component: NgxComponent },
-            { path: 'followers/:username', component: GithubProfileComponent },
+            { path: 'followers/:userid/:username', component: GithubProfileComponent },
             { path: 'followers', component: GithubFollowersComponent },
             { path: '**', component: NotFoundComponent }
            // { path: '**', redirectTo: 'home' }
