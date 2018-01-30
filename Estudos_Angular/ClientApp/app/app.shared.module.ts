@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
@@ -32,6 +32,11 @@ import { GithubProfileComponent } from "./components/github-profile/github-profi
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { OrderService } from "./services/order.service";
 import { AuthService } from "./services/auth.service";
+import { AdminComponent } from "./components/admin/admin.component";
+import { LoginComponent } from "./components/login/login.component";
+import { NoAccessComponent } from "./components/no-access/no-access.component";
+import { MockBackend } from "@angular/http/testing";
+import { fakeBackendProvider } from "./helpers/fake-backend";
 
 
 
@@ -57,7 +62,11 @@ import { AuthService } from "./services/auth.service";
         NgxComponent,
         GithubFollowersComponent,
         GithubProfileComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        NoAccessComponent,
+        LoginComponent,
+        AdminComponent
+
     ],
     imports: [
         CommonModule,
@@ -68,6 +77,9 @@ import { AuthService } from "./services/auth.service";
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
+            { path: 'admin', component: AdminComponent },
+            { path: 'login', component: LoginComponent },
+            { path: 'no-access', component: NoAccessComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'caixinhas', component: CaixinhasComponent },
@@ -89,6 +101,13 @@ import { AuthService } from "./services/auth.service";
         GithubFollowersService,
         OrderService,
         AuthService,
+
+
+        //Mock back-end. No mundo real, desnecessário!
+        MockBackend,
+        fakeBackendProvider,
+        BaseRequestOptions,
+
         //to dizendo que, to substindo o ErrorHandler, para um outro manipulador de erro q eu customizei, no caso, o AppErrorHandler
         { provide: ErrorHandler, useClass: AppErrorHandler }
         
