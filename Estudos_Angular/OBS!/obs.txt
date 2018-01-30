@@ -9,6 +9,7 @@ div.panel.panel-default>div.panel-heading+div.panel-body
 	   btn.btn.default.btn-sm
 
 -- docs
+
 http://angular.io
 https://www.tutorialspoint.com/typescript/typescript_array_slice.htm
 https://valor-software.com/ngx-bootstrap/#/ 
@@ -16,8 +17,7 @@ https://jsonformatter.curiousconcept.com/
 http://jsonplaceholder.typicode.com/
 
 
-GIT!
-
+-- GIT!
 
 git clone URL
 git status - verifica mudan√ßas
@@ -27,8 +27,14 @@ git pull - volta para o original caso eu erre algo!! ou pegar a versao original‚
 git push origin
 
 
-NG CLI
+-- NG CLI
+
 https://cli.angular.io/
 
 - ng g s nome
 - ng g c nome
+
+
+-- Json Web Token jwt
+
+https://jwt.io/

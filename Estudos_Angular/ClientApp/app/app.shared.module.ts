@@ -30,6 +30,8 @@ import { GithubFollowersComponent } from "./components/github-followers/github-f
 import { GithubFollowersService } from "./services/github-followers.service";
 import { GithubProfileComponent } from "./components/github-profile/github-profile.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { OrderService } from "./services/order.service";
+import { AuthService } from "./services/auth.service";
 
 
 
@@ -85,6 +87,8 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
         SupplierService,
         PostService,
         GithubFollowersService,
+        OrderService,
+        AuthService,
         //to dizendo que, to substindo o ErrorHandler, para um outro manipulador de erro q eu customizei, no caso, o AppErrorHandler
         { provide: ErrorHandler, useClass: AppErrorHandler }
         
