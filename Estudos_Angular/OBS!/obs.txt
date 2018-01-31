@@ -37,4 +37,5 @@ https://cli.angular.io/
 
 -- Json Web Token jwt
 
+npm install angular2-jwt --save
 https://jwt.io/
