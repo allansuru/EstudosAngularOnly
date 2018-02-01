@@ -46,6 +46,16 @@ export class AuthService {
 
         return !isExpired; */
     }
+
+    get currentUser() {
+       
+        let token = localStorage.getItem('token');
+        if (!token) return null;
+
+        console.log('DecodeToken:', new JwtHelper().decodeToken(token));
+        return new JwtHelper().decodeToken(token);
+    }
+
     private handleError(error: Response) {
         console.log('Error: ', error);
         return Observable.throw(error.json());
