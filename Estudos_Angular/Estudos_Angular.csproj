@@ -48,6 +48,8 @@
     <None Remove="ClientApp\app\helpers\fake-backend.ts" />
     <None Remove="ClientApp\app\models\product.ts" />
     <None Remove="ClientApp\app\models\supplier.ts" />
+    <None Remove="ClientApp\app\services\admin-auth-guard.service.ts" />
+    <None Remove="ClientApp\app\services\auth-guard.service.ts" />
     <None Remove="ClientApp\app\services\auth.service.ts" />
     <None Remove="ClientApp\app\services\data.service.ts" />
     <None Remove="ClientApp\app\services\order.service.ts" />
@@ -83,10 +85,12 @@
     <TypeScriptCompile Include="ClientApp\app\helpers\fake-backend.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\product.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\supplier.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\admin-auth-guard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\auth-guard.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\auth.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\data.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\github-followers.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\services\order.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\orders.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\posts.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\product.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\supplier.service.ts" />

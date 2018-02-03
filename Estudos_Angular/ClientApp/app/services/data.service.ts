@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import { AppError } from './../common/app-error';
 import { NotFoundError } from './../common/not-found-error';
 import { Observable } from 'rxjs/Observable';
@@ -7,19 +7,23 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { NotExistError } from "../common/not-exist-error";
+import { AuthHttp } from "angular2-jwt";
 
 
 @Injectable()
 
 export class DataService {
+    
 
-    constructor(private url:string, private http: Http) { }
+    constructor(private url: string, private http: Http) { }
 
     getAll() {
         return this.http.get(this.url)
             .map(response => response.json())
             .catch(this.handleError);
     }
+
+
 
     create(resource: any) {
         //return Observable.throw(new AppError());

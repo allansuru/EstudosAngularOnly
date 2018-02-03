@@ -37,6 +37,11 @@ import { LoginComponent } from "./components/login/login.component";
 import { NoAccessComponent } from "./components/no-access/no-access.component";
 import { MockBackend } from "@angular/http/testing";
 import { fakeBackendProvider } from "./helpers/fake-backend";
+import { AuthGuard } from "./services/auth-guard.service";
+import { AdminAuthGuard } from "./services/admin-auth-guard.service";
+import { DataService } from "./services/data.service";
+import { OrdersService } from "./services/orders.service";
+import { AuthHttp } from "angular2-jwt/angular2-jwt";
 
 
 
@@ -75,9 +80,13 @@ import { fakeBackendProvider } from "./helpers/fake-backend";
         TabsModule.forRoot(),
         ReactiveFormsModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            //{ path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'admin', component: AdminComponent },
+            {
+                path: 'admin',
+                component: AdminComponent,
+               canActivate: [AuthGuard, AdminAuthGuard]
+            },
             { path: 'login', component: LoginComponent },
             { path: 'no-access', component: NoAccessComponent },
             { path: 'counter', component: CounterComponent },
@@ -89,8 +98,8 @@ import { fakeBackendProvider } from "./helpers/fake-backend";
             { path: 'ngx', component: NgxComponent },
             { path: 'followers/:userid/:username', component: GithubProfileComponent },
             { path: 'followers', component: GithubFollowersComponent },
-            { path: '**', component: NotFoundComponent }
-           // { path: '**', redirectTo: 'home' }
+            { path: '**', component: NotFoundComponent },
+         //  { path: '**', redirectTo: 'home' }
         ])
     ]
     ,
@@ -99,13 +108,17 @@ import { fakeBackendProvider } from "./helpers/fake-backend";
         SupplierService,
         PostService,
         GithubFollowersService,
-        OrderService,
+        DataService,
         AuthService,
+        AuthGuard,
+        AdminAuthGuard,
+        OrdersService,
+  
 
 
         //Mock back-end. No mundo real, desnecessário!
-        MockBackend,
-        fakeBackendProvider,
+        //MockBackend,
+        //fakeBackendProvider,
         BaseRequestOptions,
 
         //to dizendo que, to substindo o ErrorHandler, para um outro manipulador de erro q eu customizei, no caso, o AppErrorHandler
