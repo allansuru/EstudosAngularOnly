@@ -42,6 +42,7 @@ import { AdminAuthGuard } from "./services/admin-auth-guard.service";
 import { DataService } from "./services/data.service";
 import { OrdersService } from "./services/orders.service";
 import { AuthHttp } from "angular2-jwt/angular2-jwt";
+import { EinsteinExemples } from "./components/einstein-exemples/einstein-exemples.component";
 
 
 
@@ -70,7 +71,8 @@ import { AuthHttp } from "angular2-jwt/angular2-jwt";
         NotFoundComponent,
         NoAccessComponent,
         LoginComponent,
-        AdminComponent
+        AdminComponent,
+        EinsteinExemples
 
     ],
     imports: [
@@ -92,6 +94,7 @@ import { AuthHttp } from "angular2-jwt/angular2-jwt";
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'caixinhas', component: CaixinhasComponent },
+            { path: 'einstein-estudos', component: EinsteinExemples },
             { path: 'reactive-form', component: SignupFormComponent },
             { path: 'new-courses', component: NewCousesComponent },
             { path: 'posts', component: PostsComponent },

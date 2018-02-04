@@ -27,7 +27,7 @@ export class CaixinhasComponent implements OnInit {
         name: '',
         preco: '',
         estoque: '',
-        quantidade: ''
+        quanthex: ''
     }
 
     supplier = {
@@ -129,7 +129,7 @@ export class CaixinhasComponent implements OnInit {
     supplierRecebe(lstSuplier: any) {
 
         lstSuplier.push({
-            'City': 'Cidade da Porral',
+            'City': 'Chex da Porral',
             'CompanyName': 'Compania da Porral',
             'ContactName': 'Contact Name da Porra',
             'Country': 'BR',

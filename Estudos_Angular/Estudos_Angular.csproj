@@ -30,6 +30,7 @@
     <None Remove="ClientApp\app\components\admin\admin.component.ts" />
     <None Remove="ClientApp\app\components\colapse\colapse.component.ts" />
     <None Remove="ClientApp\app\components\contact\contact.component.ts" />
+    <None Remove="ClientApp\app\components\einstein-exemples\einstein-exemples.component.ts" />
     <None Remove="ClientApp\app\components\filter-supplier\filter-supplier.component.ts" />
     <None Remove="ClientApp\app\components\github-followers\github-followers.component.ts" />
     <None Remove="ClientApp\app\components\github-profile\github-profile.component.ts" />
@@ -67,6 +68,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\admin\admin.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\colapse\colapse.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\contact\contact.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\einstein-exemples\einstein-exemples.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\filter-supplier\filter-supplier.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\github-followers\github-followers.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\github-profile\github-profile.component.ts" />

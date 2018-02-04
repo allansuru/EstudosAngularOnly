@@ -1,0 +1,46 @@
+﻿body {
+
+
+}
+
+td.paleta {
+
+    width: 20px;
+    height: 20px;
+}
+
+
+.red {
+    border: 2px solid #ff0000;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #ff0000;
+}
+
+.forestGreen {
+    border: 2px solid #228B22;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #228B22;
+}
+
+.deepPink {
+    border: 2px solid #FF1493;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #FF1493;
+}
+
+.lightCyan {
+    border: 2px solid #E0FFFF;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #E0FFFF;
+}
+
+.gold {
+    border: 2px solid #FFD700;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #FFD700;
+}

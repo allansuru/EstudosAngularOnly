@@ -18,7 +18,7 @@ export class FilterSupplierComponent implements OnInit {
 
     lstApoio: any = [];
 
-    filtroCidades = {
+    filtroChexs = {
         id: [0, 1, 2, 3],
         estados: ['Rio', 'SP', 'BH', 'RS'],
         tamanho: 0
@@ -30,14 +30,14 @@ export class FilterSupplierComponent implements OnInit {
         this.getSuppliers();
        // this.getinSuppliers();  
 
-        console.log('Filtro Cidades: ', this.filtroCidades)
+        console.log('Filtro Chexs: ', this.filtroChexs)
     }
 
     private getSuppliers() {
         this.supplierService.getAll()
             .subscribe(s => {
                 this.supplierList = s;
-                this.filtroCidades.tamanho = this.filtroCidades.estados.length;
+                this.filtroChexs.tamanho = this.filtroChexs.estados.length;
                 //this.queryResult = s;
             });
     }
@@ -62,8 +62,8 @@ export class FilterSupplierComponent implements OnInit {
     addIds(id: number, $event: any) {
         let recebe = [];
         if ($event.target.checked) {
-            this.filtroCidades.id.push(id);
-            this.filtroCidades.tamanho++;
+            this.filtroChexs.id.push(id);
+            this.filtroChexs.tamanho++;
 
 
           /*  for (var i = 0; i < this.lstApoio.length; i++) {
@@ -75,9 +75,9 @@ export class FilterSupplierComponent implements OnInit {
 
         }
         else {
-            var index = this.filtroCidades.id.indexOf(id);
-            this.filtroCidades.id.splice(index, 1);
-            this.filtroCidades.tamanho--;
+            var index = this.filtroChexs.id.indexOf(id);
+            this.filtroChexs.id.splice(index, 1);
+            this.filtroChexs.tamanho--;
 
             for (var i = 0; i < this.supplierListFilter.length; i++) {
                 if (this.supplierListFilter[i]['SupplierId'] === id) {
@@ -94,10 +94,10 @@ export class FilterSupplierComponent implements OnInit {
     }
 
     trataUltimo(id: number, $event: any) {
-        if (this.filtroCidades.tamanho == 0  && this.filtroCidades.id.length == 0) {
-            this.filtroCidades.id.push(id);
+        if (this.filtroChexs.tamanho == 0  && this.filtroChexs.id.length == 0) {
+            this.filtroChexs.id.push(id);
             $event.target.checked = true;
-            this.filtroCidades.tamanho++;
+            this.filtroChexs.tamanho++;
         }
     }
 
@@ -111,7 +111,7 @@ export class FilterSupplierComponent implements OnInit {
             ContactName: '',
             City: '',
             Country: '',
-            ids: this.filtroCidades.id
+            ids: this.filtroChexs.id
         })
             .subscribe(response => {
                 this.supplierListFilter = response;

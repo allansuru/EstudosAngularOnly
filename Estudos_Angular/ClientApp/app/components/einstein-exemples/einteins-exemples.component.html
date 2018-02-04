@@ -1,0 +1,22 @@
+﻿<h2>Paleta de Cores</h2>
+
+
+ 
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cor</th>
+                <th>Nome</th>
+                <th>Hex</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cor of paletaCores">
+                <td class="paleta"><div [class]="cor.name"></div></td>
+                <td>{{ cor.name }}</td>
+                <td>{{ cor.hex }}</td>
+
+        </tbody>
+    </table>
+</div>

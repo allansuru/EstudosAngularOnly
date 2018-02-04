@@ -3,5 +3,5 @@
     name: string;
     preco: string;
     estoque: string;
-    quantidade: string;
+    quanthex: string;
 }

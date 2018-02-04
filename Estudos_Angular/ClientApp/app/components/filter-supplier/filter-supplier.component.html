@@ -2,12 +2,12 @@
 
 
 <div class="form-group">
-    {{ filtroCidades | json }}
-    <div *ngFor="let estado of filtroCidades.estados; let i = index" class="checkbox">
+    {{ filtroChexs | json }}
+    <div *ngFor="let estado of filtroChexs.estados; let i = index" class="checkbox">
         <label for="estados">
             <input type="checkbox" 
                    id="{{i}}"
-                    [checked]="filtroCidades.id.includes(i)"
+                    [checked]="filtroChexs.id.includes(i)"
                    (change)="addIds(i, $event)"
                    > 
             {{ estado }}
