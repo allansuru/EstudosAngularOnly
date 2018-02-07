@@ -39,3 +39,9 @@ https://cli.angular.io/
 
 npm install angular2-jwt --save
 https://jwt.io/
+
+--LINT plugin tslint
+
+Resolver os 'erros' 
+ACHA - ng lint
+RESOLVE - ng lint --fix
