@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="col-sm-12">
+        <div class="input-group form-group">
+            <input type="text" id="input1-group2" name="input1-group2" (input)="pesquisarComponente(pesquisa)" [(ngModel)]="pesquisa" class="form-control" placeholder="Pesquisar...">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-primary" (click)="pesquisarComponente(pesquisa)"><i class="icon-magnifier"></i></button>
+            </span>
+        </div>
+    </div>
+    <table class="table table-condensed">
+        <thead>
+            <!--<tr>
+              <th class="small text-muted">Título</th>
+              <th></th>
+            </tr>-->
+            <tr class="small bg-info">
+                <th>{{ lstProdutos.length }} registros</th>
+                <th>Nome do Produto</th>
+                <th>Quantidade</th>
+                <th>Preco</th>
+                <th>Estoque</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tela of lstProdutos">
+            <td style="cursor:pointer">
+            </td>
+            <td class="text-muted">{{ tela.ProductName }}</td>
+              <td class="text-muted">{{ tela.QuantityPerUnit }}</td>
+              <td class="text-muted">{{ tela.UnitPrice }}</td>
+              <td class="text-muted">{{ tela.UnitsInStock }}</td>
+          </tr>
+        </tbody>
+        </table>
+
+</div>
+
+

@@ -43,6 +43,7 @@ import { DataService } from "./services/data.service";
 import { OrdersService } from "./services/orders.service";
 import { AuthHttp } from "angular2-jwt/angular2-jwt";
 import { EinsteinExemples } from "./components/einstein-exemples/einstein-exemples.component";
+import { PesquisaComponent } from "./components/pesquisa/pesquisa.component";
 
 
 
@@ -72,7 +73,8 @@ import { EinsteinExemples } from "./components/einstein-exemples/einstein-exempl
         NoAccessComponent,
         LoginComponent,
         AdminComponent,
-        EinsteinExemples
+        EinsteinExemples,
+        PesquisaComponent
 
     ],
     imports: [
@@ -92,6 +94,7 @@ import { EinsteinExemples } from "./components/einstein-exemples/einstein-exempl
             { path: 'login', component: LoginComponent },
             { path: 'no-access', component: NoAccessComponent },
             { path: 'counter', component: CounterComponent },
+            { path: 'app-pesquisa', component: PesquisaComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'caixinhas', component: CaixinhasComponent },
             { path: 'einstein-estudos', component: EinsteinExemples },
