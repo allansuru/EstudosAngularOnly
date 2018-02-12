@@ -8,12 +8,23 @@
             </span>
         </div>
     </div>
+    <ul class="pagination" [hidden]="lstProdutos?.length == 0">
+        <li class="page-item">
+            <button type="button" class="page-link" (click)="mudarPagina( pagina - 1 )" [disabled]="pagina == 0">
+                Anterior
+            </button>
+        </li>
+        <li class="page-item" [ngClass]="{'active': i == pagina }" *ngFor="let p of paginacao; let i = index">
+            <a class="page-link" href="javascript:void(0)" (click)="mudarPagina( i )">{{i+1}}</a>
+        </li>
+        <li class="page-item">
+            <button type="button" class="page-link" (click)="mudarPagina( pagina + 1 )" [disabled]="pagina == paginacao?.length - 1">
+                Proxima
+            </button>
+        </li>
+    </ul>     
     <table class="table table-condensed">
         <thead>
-            <!--<tr>
-              <th class="small text-muted">Título</th>
-              <th></th>
-            </tr>-->
             <tr class="small bg-info">
                 <th>{{ lstProdutos.length }} registros</th>
                 <th>Nome do Produto</th>

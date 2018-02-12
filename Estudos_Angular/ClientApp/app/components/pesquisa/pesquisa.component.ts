@@ -12,6 +12,9 @@ export class PesquisaComponent implements OnInit {
     private lstProdutos: any[] = [];
     private lstProdutosTotal: any[] = [];
     private lstAux: any[] = [];
+    public paginacao: any[];
+    public porpagina: number = 10;
+    public pagina: number = 0;
 
     constructor(private produtos: ProductService) { }
 
@@ -26,7 +29,10 @@ export class PesquisaComponent implements OnInit {
                 this.lstProdutos = result;
                 this.lstProdutosTotal = result;
                 console.log('Lista de Produtos: ', this.lstProdutos);
-            })
+                this.montaPaginacao();
+                this.paginarFiltrados();
+            });
+ 
     }
 
     pesquisarComponente(pesquisa: string) {
@@ -37,11 +43,34 @@ export class PesquisaComponent implements OnInit {
         this.lstAux = this.lstProdutos;
 
         this.lstAux = this.lstAux.filter(item =>
-            (item['ProductName'].toLowerCase().indexOf(pesquisa.toLowerCase()) !== -1));
+            (item['ProductName']
+                .toLowerCase()
+                .indexOf(pesquisa.toLowerCase()) !== -1));
 
         return this.lstProdutos = this.lstAux;
+    }
+
+    private montaPaginacao() {
+        this.paginacao = []
+        for (var i = 0; i < this.lstProdutosTotal.length / this.porpagina; i++) {
+            this.paginacao.push(i);
+        }
+    }
+
+    private paginarFiltrados() {
+        let lstTotal_aux: any = [];
 
 
+        lstTotal_aux = this.lstProdutosTotal.slice(this.pagina * this.porpagina, (this.pagina + 1) * this.porpagina);
+
+
+        return this.lstProdutos = lstTotal_aux;
+    }
+    private mudarPagina(pagina: any) {
+        if (pagina > 0) {
+            this.pagina = pagina;
+            this.paginarFiltrados();
+        }
     }
 }
 
