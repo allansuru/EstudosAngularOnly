@@ -48,3 +48,6 @@ RESOLVE - ng lint --fix
 
 --  ANIMATE on Angular
 https://daneden.github.io/animate.css/
+
+-- Verificar compatibilidade de browser
+https://caniuse.com/
