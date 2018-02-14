@@ -28,6 +28,7 @@
     <None Remove="ClientApp\app\common\not-exist-error.ts" />
     <None Remove="ClientApp\app\common\not-found-error.ts" />
     <None Remove="ClientApp\app\components\admin\admin.component.ts" />
+    <None Remove="ClientApp\app\components\animations.ts" />
     <None Remove="ClientApp\app\components\colapse\colapse.component.ts" />
     <None Remove="ClientApp\app\components\contact\contact.component.ts" />
     <None Remove="ClientApp\app\components\einstein-exemples\einstein-exemples.component.ts" />
@@ -45,6 +46,9 @@
     <None Remove="ClientApp\app\components\reactiveForm\username.validators.ts" />
     <None Remove="ClientApp\app\components\signup\signup.component.ts" />
     <None Remove="ClientApp\app\components\tweet\tweet.component.ts" />
+    <None Remove="ClientApp\app\components\zippy\zippy.component.animations.ts" />
+    <None Remove="ClientApp\app\components\zippy\zippy.component.spec.ts" />
+    <None Remove="ClientApp\app\components\zippy\zippy.component.ts" />
     <None Remove="ClientApp\app\directives\input-format.directive.ts" />
     <None Remove="ClientApp\app\helpers\fake-backend.ts" />
     <None Remove="ClientApp\app\models\product.ts" />
@@ -66,6 +70,7 @@
     <TypeScriptCompile Include="ClientApp\app\common\not-exist-error.ts" />
     <TypeScriptCompile Include="ClientApp\app\common\not-found-error.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\admin\admin.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\todos\animations.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\colapse\colapse.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\contact\contact.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\einstein-exemples\einstein-exemples.component.ts" />
@@ -83,6 +88,9 @@
     <TypeScriptCompile Include="ClientApp\app\components\reactiveForm\username.validators.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\signup\signup.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\tweet\tweet.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\zippy\zippy.component.animations.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\zippy\zippy.component.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\zippy\zippy.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\directives\input-format.directive.ts" />
     <TypeScriptCompile Include="ClientApp\app\helpers\fake-backend.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\product.ts" />

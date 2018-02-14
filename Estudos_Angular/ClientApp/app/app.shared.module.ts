@@ -1,3 +1,5 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -44,6 +46,9 @@ import { OrdersService } from "./services/orders.service";
 import { AuthHttp } from "angular2-jwt/angular2-jwt";
 import { EinsteinExemples } from "./components/einstein-exemples/einstein-exemples.component";
 import { PesquisaComponent } from "./components/pesquisa/pesquisa.component";
+import { AnimacoesComponent } from "./components/animacoes/animacoes.component";
+import { ZippyComponent } from "./components/zippy/zippy.component";
+import { TodosComponent } from "./todos/todos.component";
 
 
 
@@ -74,13 +79,18 @@ import { PesquisaComponent } from "./components/pesquisa/pesquisa.component";
         LoginComponent,
         AdminComponent,
         EinsteinExemples,
-        PesquisaComponent
+        PesquisaComponent,
+        AnimacoesComponent,
+        ZippyComponent,
+        TodosComponent
 
     ],
     imports: [
+        BrowserModule,
         CommonModule,
         HttpModule,
         FormsModule,
+        BrowserAnimationsModule,
         TabsModule.forRoot(),
         ReactiveFormsModule,
         RouterModule.forRoot([
@@ -92,6 +102,7 @@ import { PesquisaComponent } from "./components/pesquisa/pesquisa.component";
                canActivate: [AuthGuard, AdminAuthGuard]
             },
             { path: 'login', component: LoginComponent },
+            { path: 'animacoes', component: AnimacoesComponent },
             { path: 'no-access', component: NoAccessComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'app-pesquisa', component: PesquisaComponent },
