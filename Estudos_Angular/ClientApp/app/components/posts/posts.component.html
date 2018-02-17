@@ -1,9 +1,11 @@
-﻿
+﻿ <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 <input type="text"  class="form-control" placeholder="Title of new post" (keyup.enter)="createPost(title)" #title />
 
 <ul class="list-group">
     <li 
         class="list-group-item" 
+         [ngClass]="{'animated zoomIn': criado == true && post.id == 0}" 
         *ngFor="let post of posts">
         <button 
                 (click)="updatePost(post)"
@@ -15,3 +17,4 @@
         {{ post.title }}
     </li>
 </ul>
+

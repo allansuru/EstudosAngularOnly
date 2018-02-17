@@ -65,6 +65,7 @@
     "angular2-jwt": "^0.2.3",
     "animate.css": "^3.6.1",
     "glyphicons": "^0.2.0",
-    "ngx-bootstrap": "^2.0.2"
+    "ngx-bootstrap": "^2.0.2",
+    "web-animations-js": "^2.3.1"
   }
 }

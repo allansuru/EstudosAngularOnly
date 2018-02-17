@@ -48,7 +48,8 @@ import { EinsteinExemples } from "./components/einstein-exemples/einstein-exempl
 import { PesquisaComponent } from "./components/pesquisa/pesquisa.component";
 import { AnimacoesComponent } from "./components/animacoes/animacoes.component";
 import { ZippyComponent } from "./components/zippy/zippy.component";
-import { TodosComponent } from "./todos/todos.component";
+import { TodosComponent } from "./components/todos/todos.component";
+
 
 
 
@@ -90,7 +91,7 @@ import { TodosComponent } from "./todos/todos.component";
         CommonModule,
         HttpModule,
         FormsModule,
-        BrowserAnimationsModule,
+      //  BrowserAnimationsModule,
         TabsModule.forRoot(),
         ReactiveFormsModule,
         RouterModule.forRoot([

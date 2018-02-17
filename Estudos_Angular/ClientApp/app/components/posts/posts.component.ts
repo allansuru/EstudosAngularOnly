@@ -14,6 +14,8 @@ export class PostsComponent implements OnInit {
 
     posts: any[];
     filterPosts: any[];
+    criado: boolean = false;
+    deletado: boolean = false;
  
 
     constructor(private postService: PostService) {
@@ -44,9 +46,8 @@ export class PostsComponent implements OnInit {
         }
   //this.posts.push(post) == final da lista, pra colocar no começo da lista use a tecnica abaixo
         this.posts.splice(0, 0, post);
-
+        this.criado = true;
         titleInput.value = '';
-
         this.postService.create(post.id)
             .subscribe(
             newPost => {
@@ -77,7 +78,7 @@ export class PostsComponent implements OnInit {
         let index = this.posts.indexOf(post);
         console.log('index item: ', index);
         this.posts.splice(index, 1); //limpando o deletado da lista que recebe o objeto
-
+        this.deletado = true;
         this.postService.delete(post.id)
             .subscribe( deletePost => {
                 console.log(deletePost);
