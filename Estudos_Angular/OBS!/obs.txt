@@ -55,3 +55,6 @@ https://caniuse.com/
 -- Pra rodar animação em navegores tipo IE
 /** IE10 and IE11 requires the following to support `@angular/animation`. */
 import 'web-animations-js';  // Run `npm install --save web-animations-js`.
+
+-- Angular Materials
+https://material.angular.io/
