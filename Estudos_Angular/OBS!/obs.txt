@@ -58,3 +58,11 @@ import 'web-animations-js';  // Run `npm install --save web-animations-js`.
 
 -- Angular Materials
 https://material.angular.io/
+
+npm i --save @angular/cdk @angular/material @angular/animations hammerjs
+
+--include a theme
+in styles.css add @import "~@angular/material/prebuilt-themes/indigo-pink.css";  
+-- in app.module
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
