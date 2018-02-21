@@ -41,7 +41,7 @@ import { MockBackend } from "@angular/http/testing";
 import { fakeBackendProvider } from "./helpers/fake-backend";
 import { AuthGuard } from "./services/auth-guard.service";
 import { AdminAuthGuard } from "./services/admin-auth-guard.service";
-import { DataService } from "./services/data.service";
+import { DataService, Servicos } from "./services/data.service";
 import { OrdersService } from "./services/orders.service";
 import { AuthHttp } from "angular2-jwt/angular2-jwt";
 import { EinsteinExemples } from "./components/einstein-exemples/einstein-exemples.component";
@@ -127,6 +127,7 @@ import { TodosComponent } from "./components/todos/todos.component";
         PostService,
         GithubFollowersService,
         DataService,
+        Servicos,
         AuthService,
         AuthGuard,
         AdminAuthGuard,

@@ -13,7 +13,8 @@ import { AuthHttp } from "angular2-jwt";
 @Injectable()
 
 export class DataService {
-    
+
+ 
 
     constructor(private url: string, private http: Http) { }
 
@@ -56,6 +57,18 @@ export class DataService {
             return Observable.throw(new NotFoundError());
 
         return Observable.throw(new AppError(error));
+    }
+
+   
+}
+
+@Injectable()
+
+export class Servicos {
+    tab: boolean;
+
+    setTab() {
+      return this.tab = true;
     }
 }
 
