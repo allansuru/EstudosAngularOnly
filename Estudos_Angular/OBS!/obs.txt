@@ -66,3 +66,6 @@ in styles.css add @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 -- in app.module
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+-- MAIS de materials - ICONS
+https://material.io/icons/
