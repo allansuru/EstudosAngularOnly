@@ -70,5 +70,5 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 -- MAIS de materials - ICONS
 https://material.io/icons/
 
--- Material Color
+-- Material Color	
 https://material.io/color/#!/
