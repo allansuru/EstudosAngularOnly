@@ -20,6 +20,7 @@ export class PostsComponent implements OnInit {
     favorite: any[];
     EhFavorito: number = 0;
     idFavorito: number = 0;
+    private obj: object = {};
  
 
     constructor(private postService: PostService, private favoriteService: FavoriteService) {
@@ -29,12 +30,6 @@ export class PostsComponent implements OnInit {
     ngOnInit() {
         this.getPosts();
         this.getFavorites();
-    }
-    onFavoriteChanged(event: any) {
-        console.log('Evento: ', event);
-        console.log('IdFavorito: ', this.idFavorito);
-
-        this.UpdateFavorite(event);
     }
 
     getPosts() {
@@ -49,35 +44,43 @@ export class PostsComponent implements OnInit {
             });
     }
 
+    // FAVORITOS
+    getObject() {
+
+        this.obj = {
+            'IdFavorites': this.idFavorito,
+            'Id_User': 1,
+            'Id_Component': 1,
+            'EhFavorito': this.EhFavorito
+        };
+    }
     getFavorites() {
         this.favoriteService.getAll()
             .subscribe(f => {
                 this.favorite = f;
-                this.favorite = this.favorite.filter(ff => ff['Id_Component'] == 1);
-                this.EhFavorito = this.favorite[0]['EhFavorito'];
-                this.idFavorito = this.favorite[0]['IdFavorites'];
-                console.log('Eh favorito: ', this.EhFavorito);
-                console.log('Favoritos: ', this.favorite);
+                this.favorite = this.favorite.filter(ff => ff['Id_Component'] == 15);
+                if (this.favorite.length > 0) {
+                    this.EhFavorito = this.favorite[0]['EhFavorito'];
+                    this.idFavorito = this.favorite[0]['IdFavorites'];
+                    console.log('Eh favorito: ', this.EhFavorito);
+                    console.log('Favoritos: ', this.favorite);
+                }
+
             })
     }
+
     UpdateFavorite(event: any) {
-        if (event['newValue'] == false) {
-            this.EhFavorito = 0
-        }
-        else
-            this.EhFavorito = 1;
-
-        const obj = {
-            'IdFavorites': this.idFavorito,
-            'Id_User': 1,
-            'Id_Component': 1,
-            'CreateFavorite': Date.now,
-            'EhFavorito': this.EhFavorito 
-        };
-
-
-        this.favoriteService.create(obj)
+        this.getObject();
+        console.log('Objeto favorito: ', this.obj);
+        this.favoriteService.create(this.obj)
             .subscribe(f => console.log('update favorite'));
+    }
+
+    onFavoriteChanged(event: any) {
+
+        console.log('Evento: ', event['newValue']);
+        this.EhFavorito = event['newValue'];
+        this.UpdateFavorite(event);
     }
 
     createPost(titleInput: HTMLInputElement) {

@@ -5,6 +5,8 @@ import { SupplierService } from "../../services/supplier.service";
 import { Supplier } from "../../models/supplier";
 import { AppError } from "../../common/app-error";
 import { NotFoundError } from "../../common/not-found-error";
+import { FavoriteService } from "../../services/favorite.service"
+
 
 
 @Component({
@@ -21,6 +23,13 @@ export class CaixinhasComponent implements OnInit {
     size: number = 4;
     productsFirsts: any = [];
     supplirsFirsts: Supplier[];
+
+    // favorite
+
+    favorite: any[];
+    EhFavorito: number = 0;
+    idFavorito: number = 0;
+    private obj: object = {};
 
     product = {
         id: 0,
@@ -40,16 +49,16 @@ export class CaixinhasComponent implements OnInit {
 
     constructor(
         private productService: ProductService,
-        private supplierService: SupplierService
+        private supplierService: SupplierService,
+        private favoriteService: FavoriteService
     )
     { }
 
     ngOnInit() {
         this.getProducts();
         this.getSuppliers();
-
-       
-
+        // Favorito
+        this.getFavorites();
 
     }
     public delete(id: number) {
@@ -153,5 +162,48 @@ export class CaixinhasComponent implements OnInit {
         //}
 
   
+    }
+
+
+    // FAVORITOS
+
+
+    getObject() {
+
+            this.obj = {
+                'IdFavorites': this.idFavorito,
+                'Id_User': 2,
+                'Id_Component': 15,
+                'EhFavorito': this.EhFavorito
+            };
+    }
+
+    getFavorites() {
+        this.favoriteService.getAll()
+            .subscribe(f => {
+                this.favorite = f;
+                this.favorite = this.favorite.filter(ff => ff['Id_Component'] == 15);
+                if (this.favorite.length > 0) {
+                this.EhFavorito = this.favorite[0]['EhFavorito'];
+                this.idFavorito = this.favorite[0]['IdFavorites'];
+                console.log('Eh favorito: ', this.EhFavorito);
+                console.log('Favoritos: ', this.favorite);
+                }
+
+            })
+    }
+
+    UpdateFavorite(event: any) {
+        this.getObject();
+        console.log('Objeto favorito: ', this.obj);
+        this.favoriteService.create(this.obj)
+            .subscribe(f => console.log('update favorite'));
+    }
+
+    onFavoriteChanged(event: any) {
+ 
+        console.log('Evento: ', event['newValue']);
+        this.EhFavorito = event['newValue'];
+        this.UpdateFavorite(event);
     }
 }

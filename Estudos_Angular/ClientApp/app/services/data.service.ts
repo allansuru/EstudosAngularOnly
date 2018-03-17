@@ -32,7 +32,7 @@ export class DataService {
         //return Observable.throw(new AppError());
 
         return this.http.post(this.url, resource, this.options)
-            .map(response => response.json())
+          //  .map(response => response.json())
             .catch(this.handleError);
     }
 
