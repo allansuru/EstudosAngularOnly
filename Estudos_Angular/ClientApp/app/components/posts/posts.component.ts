@@ -4,6 +4,7 @@ import { AppError } from "../../common/app-error";
 import { NotFoundError } from "../../common/not-found-error";
 import { NotExistError } from "../../common/not-exist-error";
 import { AppErrorHandler } from '../../common/app-error-handler'
+import { FavoriteService } from "../../services/favorite.service"
 
 @Component({
     selector: 'posts',
@@ -16,14 +17,24 @@ export class PostsComponent implements OnInit {
     filterPosts: any[];
     criado: boolean = false;
     deletado: boolean = false;
+    favorite: any[];
+    EhFavorito: number = 0;
+    idFavorito: number = 0;
  
 
-    constructor(private postService: PostService) {
+    constructor(private postService: PostService, private favoriteService: FavoriteService) {
        
     }
 
     ngOnInit() {
         this.getPosts();
+        this.getFavorites();
+    }
+    onFavoriteChanged(event: any) {
+        console.log('Evento: ', event);
+        console.log('IdFavorito: ', this.idFavorito);
+
+        this.UpdateFavorite(event);
     }
 
     getPosts() {
@@ -36,6 +47,37 @@ export class PostsComponent implements OnInit {
                 console.log('Só filtrando: ', this.filterPosts);
 
             });
+    }
+
+    getFavorites() {
+        this.favoriteService.getAll()
+            .subscribe(f => {
+                this.favorite = f;
+                this.favorite = this.favorite.filter(ff => ff['Id_Component'] == 1);
+                this.EhFavorito = this.favorite[0]['EhFavorito'];
+                this.idFavorito = this.favorite[0]['IdFavorites'];
+                console.log('Eh favorito: ', this.EhFavorito);
+                console.log('Favoritos: ', this.favorite);
+            })
+    }
+    UpdateFavorite(event: any) {
+        if (event['newValue'] == false) {
+            this.EhFavorito = 0
+        }
+        else
+            this.EhFavorito = 1;
+
+        const obj = {
+            'IdFavorites': this.idFavorito,
+            'Id_User': 1,
+            'Id_Component': 1,
+            'CreateFavorite': Date.now,
+            'EhFavorito': this.EhFavorito 
+        };
+
+
+        this.favoriteService.create(obj)
+            .subscribe(f => console.log('update favorite'));
     }
 
     createPost(titleInput: HTMLInputElement) {

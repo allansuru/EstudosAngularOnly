@@ -13,10 +13,12 @@ import { AuthHttp } from "angular2-jwt";
 @Injectable()
 
 export class DataService {
-
+      public headers = new Headers({ 'Content-Type': 'application/json' });
+      options = new RequestOptions({ headers: this.headers });
  
 
     constructor(private url: string, private http: Http) { }
+
 
     getAll() {
         return this.http.get(this.url)
@@ -29,7 +31,7 @@ export class DataService {
     create(resource: any) {
         //return Observable.throw(new AppError());
 
-        return this.http.post(this.url, JSON.stringify(resource))
+        return this.http.post(this.url, resource, this.options)
             .map(response => response.json())
             .catch(this.handleError);
     }

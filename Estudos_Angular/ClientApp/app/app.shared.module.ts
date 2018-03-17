@@ -49,6 +49,7 @@ import { PesquisaComponent } from "./components/pesquisa/pesquisa.component";
 import { AnimacoesComponent } from "./components/animacoes/animacoes.component";
 import { ZippyComponent } from "./components/zippy/zippy.component";
 import { TodosComponent } from "./components/todos/todos.component";
+import { FavoriteService } from "./services/favorite.service";
 
 
 
@@ -132,9 +133,7 @@ import { TodosComponent } from "./components/todos/todos.component";
         AuthGuard,
         AdminAuthGuard,
         OrdersService,
-  
-
-
+        FavoriteService,
         //Mock back-end. No mundo real, desnecessário!
         //MockBackend,
         //fakeBackendProvider,
